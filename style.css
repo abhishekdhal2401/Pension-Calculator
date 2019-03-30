@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+/* Background */
+
+*{
+    margin:0;
+    padding:0;
+    background: url(resource/background.jpg);
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+
+/* SIDE NAV BAR */
+
+
+/* The sidebar menu */
+.sidenav {
+
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 200px;
+  left: 0;
+  background:none;
+  border: 1px solid gray;
+  overflow-x: hidden;
+
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.5s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #39ff14;
+}
+
+/* CONTAINER */
+
+.container{
+    width: 600px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 24px;
+    padding: 100px;
+    background: #222;
+}
+
+.container h1{
+    text-align: center;
+    background: #222;
+    color: white;
+    margin-bottom: 10px;
+}
+
+p{
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+
+
+
+/*DROP-DOWN MENU */
+
+form{
+    background: #222;
+    
+}
+
+form select{
+    margin-left: 110px
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance:none;
+    display: inline-block;
+    margin: 30px 0;
+    padding 10px 50px 10px 10px;
+    background: #222;
+    color: #39ff14;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    width: 190px;
+    height: 30px;
+    cursor: pointer;
+    transform: translate(50%,50%);
+    -webkit-text-align: center;
+    -moz-text-align: center;
+    text-align: center;
+    
+    transition: 0.5s;
+
+
+}
+
+select:hover{
+    border: 2px solid #39ff14;
+    color: #fff;
+}
+
+
+option{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    appearance:none;
+}
+
+
+
+/* BUTTON CALCULATE */
+
+.btn-calculate{
+    width: 200px;
+    height: 50px;
+    border-radius: 24px;
+    margin-top: 70px;
+    margin-left: 200px;
+    background: #222;
+    border: 2px solid #fff;
+    font-size: 20px;
+    transition: 0.5s;
+    color: #39ff14;
+
+}
+
+.btn-calculate:hover{
+    cursor: pointer;
+    background: #39ff14;
+    border: 2px solid #39ff14;
+    color: #222;
+}
