@@ -4,6 +4,15 @@
   height: 100%;
 }
 
+#loading{
+    position: fixed;
+    height: 100vh;
+    width:100%;
+    overflow-x: visible;
+    z-index: 999999;
+    background: #000 url('images/bb.gif') no-repeat center center;
+  }
+
   body {
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
@@ -23,6 +32,9 @@
     font-weight: 400;
     margin-bottom: 30px;
   } 
+
+  
+
   .back-image{
     background-image: url("images/ee.jpg");
     background-attachment: fixed; 
@@ -73,12 +85,6 @@
     width: 100%;
     height: 100%;
     margin-bottom: 10px;
-  }
-
-  .carousel img{
-    margin: auto;
-    width: 100%;
-    height: auto;
   }
 
   .carousel-control.right, .carousel-control.left {
@@ -145,7 +151,7 @@
   background-image: url("images/foot.jpg");
 
   /* Full height */
-  height: 100%; 
+  height: 50%; 
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -240,5 +246,10 @@
     .logo {
       font-size: 150px;
     }
+    /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
   }
   
