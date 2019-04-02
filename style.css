@@ -112,7 +112,7 @@
     font-style: normal;
   }
   .panel {
-    border: 1px solid #e3459f; 
+    border: 1px solid #f4511e; 
     border-radius:0 !important;
     transition: box-shadow 0.5s;
   }
@@ -120,13 +120,13 @@
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
   .panel-footer .btn:hover {
-    border: 1px solid #e3459f;
+    border: 1px solid #f4511e;
     background-color: #fff !important;
-    color: #e3459f;
+    color: #f4511e;
   }
   .panel-heading {
     color: #fff !important;
-    background-color: #e3459f !important;
+    background-color: #f4511e !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
