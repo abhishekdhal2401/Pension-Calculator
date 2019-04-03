@@ -14,12 +14,12 @@ var preloader;
 
 function displayContent(){
   loader.style.display= 'none';
-  document.getElementById('content').style.display = 'block';
+  document.getElementById('content').style.display = 'inline';
 }
 
 document.addEventListener("DOMContentLoaded",function(){
   loader = document.getElementById('loading');
-  loadNow(2);
+  loadNow(1.5);
 })
 
 

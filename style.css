@@ -121,18 +121,20 @@
   }
   .panel-footer .btn:hover {
     border: 1px solid #f4511e;
-    background-color: #fff !important;
-    color: #f4511e;
+    background-color: #9a9a9a !important;
+    color: #fff;
+    border-radius: 24px;
   }
   .panel-heading {
     color: #fff !important;
-    background-color: #f4511e !important;
+    background-color: #9a9a9a !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    letter-spacing: 2px;
   }
   .panel-footer {
     background-color: white !important;
@@ -148,6 +150,8 @@
     margin: 15px 0;
     background-color: #f4511e;
     color: #fff;
+    transition: 0.5s;
+    border-radius: 0px;
   }
 
 .parallax {
@@ -155,19 +159,20 @@
   background-image: url("images/foot.jpg");
 
   /* Full height */
-  height: 50%; 
+  height: 70%; 
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+  z-index: -5;
+
 }
 
   .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: #363636;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -178,6 +183,10 @@
   }
   .navbar .navbar-brand{
     padding-top: 2px ;
+  }
+
+  .navbar-nav li a{
+    transition: 0.5s;
   }
   .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
@@ -198,14 +207,16 @@
   }
 
 .row a:hover{
-  color: #f8e;
+  color: #f4511e;
   text-decoration: none;
   background-color: #fff ;
+
 }
 
   .row a
   {
     color: #fff ;
+    transition: 0.5s;
 
   }
   .slideanim {visibility:hidden;}
