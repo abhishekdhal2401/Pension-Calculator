@@ -28,17 +28,18 @@
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px;
+    text-align: center;
   }
   h4 {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.375em;
     color: #303030;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    letter-spacing: .5px;
   } 
 
-  
-
+ 
   .back-image{
     background-image: url("images/ee.jpg");
     background-attachment: fixed; 
@@ -66,8 +67,21 @@
     font-family: Montserrat, sans-serif;
   }
   .container-fluid {
-    padding: 60px 50px;
+    padding: 60px 40px;
   }
+
+  .imagepad img {
+    height: 350px;
+    width: 500px;
+    margin: auto;
+    
+  }
+
+  .imagepad1 img{
+    height: 360px;
+    margin-top: 70px;
+  }
+
 
   .bg-grey {
     background-color: #f6f6f6;
@@ -121,13 +135,13 @@
   }
   .panel-footer .btn:hover {
     border: 1px solid #f4511e;
-    background-color: #9a9a9a !important;
+    background-color: #363636 !important; 
     color: #fff;
     border-radius: 24px;
   }
   .panel-heading {
     color: #fff !important;
-    background-color: #9a9a9a !important;
+    background-color: #363636 !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -135,6 +149,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     letter-spacing: 2px;
+    word-wrap: break-word;
   }
   .panel-footer {
     background-color: white !important;
@@ -216,6 +231,7 @@
   .row a
   {
     color: #fff ;
+    text-decoration: none;
     transition: 0.5s;
 
   }
