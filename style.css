@@ -79,7 +79,8 @@
 
   .imagepad1 img{
     height: 360px;
-    margin-top: 70px;
+    margin-top: 70px !important;
+    margin: auto;
   }
 
 
