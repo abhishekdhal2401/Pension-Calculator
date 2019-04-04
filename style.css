@@ -18,9 +18,11 @@
   }
 
   body {
+
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
+
   }
   h2 {
     font-size: 24px;
@@ -28,6 +30,7 @@
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px;
+
     text-align: center;
   }
   h4 {
@@ -232,6 +235,7 @@
   {
     color: #fff ;
     text-decoration: none;
+
     transition: 0.5s;
 
   }
@@ -283,4 +287,5 @@
     background-attachment: scroll;
   }
   }
+
   
