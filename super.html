@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+    
+    <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <!-- font type used is montserrat and lato from google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" />
+  <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+ 
+
+  
+  
+  <link rel="stylesheet" href="style.css">
+
+<!-- this is a favicon -->
+  <link rel="shortcut icon" type="image/png" href="favicon.png" >
+  
+  <title>Pension calculator</title>
+    
+    
+    
+    
+    </head>
+
+<body>
+    <div id="loading"></div>
+    
+    
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><img src="images/logo.png" alt="logo" width="150px" ></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#calculate">CALCULATE</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid bg-grey">
+
+<div class="container">
+  
+
+ <form>
+  1.Date of Birth:
+  <input type="date" name="dateofbirth"><br>
+
+
+  2.Date of Joining:
+  <input type="date" name="dateofjoining"><br>
+
+
+  3.Date of Retirement:
+  <input type="date" name="dateofretirement"><br><br>
+
+  4.Period not qualified for Pension/Gratuity:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          1.Service rendered before attatining the age of 18 years:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          2.Service as apprentice except SAS apprentice:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          3.Unauthorized absence treated as "dies non" :
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          4.Over stay of leave:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          5.EOL without MC:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+          6.Suspension followed by major penalty:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+   5.Total QS counted for Pension/Gratutiy:
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"> = <input type="text" name="halfyears" placeholder="Half Years"><br>
+
+
+     6.Sum of Basic Pay and NPA of last month: Rs.:
+  <input type="number" name="numberbasic" placeholder="Rupees"><br>
+
+    7.Sum of Basic Pay and NPA of last 10 months: Rs.:
+  <input type="number" name="number10months" placeholder="Rupees"><br>
+
+      8.DA:
+  <input type="number" name="DA%" placeholder="Percent"> % <br>
+
+
+   9.DA:Rs.
+  <input type="number" name="DA" placeholder="Rupees"><br>
+
+  10.NPA:Rs.
+  <input type="number" name="NPARs" placeholder="Rupees"><br>
+
+  11.Emolument for Gratuity (BP+DA+NPA) Rs.:
+  <input type="number" name="emolumentGratuity" placeholder="Rupees"><br>
+
+  12.Emolument for Pension (BP+NPA) Rs.:
+  <input type="number" name="emolumentPension" placeholder="Rupees"><br>
+
+  13.Commutation:
+  <input type="number" name="DA%" placeholder="Percent"> % (MAX 40%)<br>
+
+
+  <button class="btn btn-lg">Calculate</button>
+ 
+
+
+
+</form> 
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="bootstrap-datepicker.js"></script>
+    <script src="function.js"></script>
+    
+    
+    </body>
+
+
+
+
+</html>
