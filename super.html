@@ -67,9 +67,9 @@
 <div class="container">
 
 
- <form>
+ <form id="form-inp">
   1.Date of Birth:
-  <input type="number" placeholder="DAY" min="1" max="31"><input type="number" placeholder="MONTH" min="1" max="12"><input type="number" placeholder="YEAR" min="1900" max="2000" id="dobYEAR">
+  <input type="number" placeholder="DAY" min="1" max="31" id="dobDay"><input type="number" placeholder="MONTH" min="1" max="12" id="dobMonth" ><input type="number" placeholder="YEAR" min="1900" max="2000" id="dobYear">
   <br><br>
 
 
@@ -79,7 +79,8 @@
 
 
   3.Date of Retirement:
-  <span><span id="retireDay">--<span>/<span id="retireMonth">--<span>/<span id="retireYear">----<span></span><br><br>
+  <input type="number" placeholder="DAY" min="1" max="31" id="dayOfRetire" disabled><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfRetire" disabled><input type="number" placeholder="YEAR" min="1900" id="yearOfRetire" disabled>
+  <br><br>
 
   4.Period not qualified for Pension/Gratuity:
   <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>

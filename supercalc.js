@@ -1,10 +1,15 @@
 var agetoRetire = 60;
 
 //YEAR OF RETIRE SPAN ELEMENTS
-var retireDay = document.getElementById('retireDay');
-var retireMonth = document.getElementById('retireMonth');
-var retireYear = document.getElementById('retireYear');
+var retireDay = document.getElementById('dayOfRetire');
+var retireMonth = document.getElementById('monthOfRetire');
+var retireYear = document.getElementById('yearOfRetire');
 
+
+//YEAR OF BIRTH INPUTS
+var dobDay = document.getElementById('dobDay');
+var dobMonth = document.getElementById('dobMonth');
+var dobYear = document.getElementById('dobYear');
 
 //YEAR OF JOIN INPUTS
 var dayOfJoin = document.getElementById('dayOfJoin');
@@ -12,21 +17,20 @@ var monthOfJoin = document.getElementById('monthOfJoin');
 var yearOfJoin = document.getElementById('yearOfJoin');
 
 
+dobDay.addEventListener("change",function(){
 
-dayOfJoin.addEventListener("change",function(){
-
-  retireDay.textContent = dayOfJoin.value;
-
-});
-
-monthOfJoin.addEventListener("change",function(){
-
-  retireMonth.textContent = monthOfJoin.value;
+  retireDay.value = dobDay.value  ;
 
 });
 
-yearOfJoin.addEventListener("change",function(){
+dobMonth.addEventListener("change",function(){
 
-  retireYear.textContent = yearOfJoin.value;
+  retireMonth.value = dobMonth.value;
+
+});
+
+dobYear.addEventListener("change",function(){
+
+  retireYear.value = parseInt(dobYear.value)+agetoRetire;
 
 });
