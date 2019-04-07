@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    
-    
+
+
+
     <head>
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,34 +20,34 @@
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
- 
 
-  
-  
+
+
+
   <link rel="stylesheet" href="style.css">
 
 <!-- this is a favicon -->
   <link rel="shortcut icon" type="image/png" href="favicon.png" >
-  
+
   <title>Pension calculator</title>
-    
-    
-    
-    
+
+
+
+
     </head>
 
 <body>
     <div id="loading"></div>
-    
-    
-    
+
+
+
     <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#myPage"><img src="images/logo.png" alt="logo" width="150px" ></a>
     </div>
@@ -65,19 +65,21 @@
 <div class="container-fluid bg-grey">
 
 <div class="container">
-  
+
 
  <form>
   1.Date of Birth:
-  <input type="date" name="dateofbirth"><br>
+  <input type="number" placeholder="DAY" min="1" max="31"><input type="number" placeholder="MONTH" min="1" max="12"><input type="number" placeholder="YEAR" min="1900" max="2000" id="dobYEAR">
+  <br><br>
 
 
   2.Date of Joining:
-  <input type="date" name="dateofjoining"><br>
+  <input type="number" placeholder="DAY" min="1" max="31" id="dayOfJoin"><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfJoin"><input type="number" placeholder="YEAR" min="1900" id="yearOfJoin">
+  <br><br>
 
 
   3.Date of Retirement:
-  <input type="date" name="dateofretirement"><br><br>
+  <span><span id="retireDay">--<span>/<span id="retireMonth">--<span>/<span id="retireYear">----<span></span><br><br>
 
   4.Period not qualified for Pension/Gratuity:
   <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
@@ -131,15 +133,11 @@
 
 
   <button class="btn btn-lg">Calculate</button>
- 
 
 
 
-</form> 
 
-
-
-</div>
+</form>
 
 
 
@@ -147,15 +145,20 @@
 
 
 
+</div>
 
-    
+
+
+
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="bootstrap-datepicker.js"></script>
     <script src="function.js"></script>
-    
-    
+    <script src="supercalc.js"></script>
+
+
     </body>
 
 
