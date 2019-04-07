@@ -19,7 +19,7 @@
 
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>-->
 
 
 
@@ -74,7 +74,7 @@
 
 
   2.Date of Joining:
-  <input type="number" placeholder="DAY" min="1" max="31" id="dayOfJoin"><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfJoin"><input type="number" placeholder="YEAR" min="1900" id="yearOfJoin">
+  <input type="number" placeholder="DAY" min="1" max="31" ><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfJoin"><input type="number" placeholder="YEAR" min="1900" >
   <br><br>
 
 
@@ -108,17 +108,17 @@
 
 
      6.Sum of Basic Pay and NPA of last month: Rs.:
-  <input type="number" name="numberbasic" placeholder="Rupees"><br>
+  <input type="number" name="numberbasic" placeholder="Rupees" id="lastMonth"><br>
 
     7.Sum of Basic Pay and NPA of last 10 months: Rs.:
-  <input type="number" name="number10months" placeholder="Rupees"><br>
+  <input type="number" name="number10months" placeholder="Rupees" id="tenMonths"><br>
 
       8.DA:
-  <input type="number" name="DA%" placeholder="Percent"> % <br>
+  <input type="number" name="DA%" placeholder="Percent" id="daPercent"> % <br>
 
 
    9.DA:Rs.
-  <input type="number" name="DA" placeholder="Rupees"><br>
+  <input type="number" name="DA" placeholder="Rupees" disabled id="daRS"><br>
 
   10.NPA:Rs.
   <input type="number" name="NPARs" placeholder="Rupees"><br>
@@ -147,15 +147,10 @@
 
 
 </div>
-
-
-
-
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="bootstrap-datepicker.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="bootstrap-datepicker.js"></script>-->
     <script src="function.js"></script>
     <script src="supercalc.js"></script>
 
