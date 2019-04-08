@@ -122,7 +122,37 @@ var four5d = document.querySelector("#four-53");
 var four6d = document.querySelector("#four-63");
 
 
-for(var i = 1; i<=6;i++){
-  console.log(typeof ("four"+i+"d"));
 
-}
+//TOTAL SERVICE CALCULATION AND HALF YEARS
+
+//VALUE OF TIME OF Join
+var joinDay = parseInt(dayOfJoin.value);
+var joinMonth = parseInt(monthOfJoin.value);
+var joinYear = parseInt(yearOfJoin.value);
+
+
+//VALUE OF TIME OF RETIRE
+
+var dayValue =parseInt(retireDay.value);
+var monthValue =parseInt(retireMonth.value);
+var yearValue =parseInt(retireYear.value);
+
+//TIME OF Service
+
+
+var actualDay = dayValue - joinDay;
+var actualMonth = monthValue = joinMonth;
+var actualYear = yearValue - joinYear;
+
+//WASTED TIME OF SERVICE
+
+
+var notQualday = parseInt(document.querySelector("#dayNotQual").value);
+var notQualmonth = parseInt(document.querySelector("#monthNotQual").value);
+var notQualyear = parseInt(document.querySelector("#yearNotQual").value);
+
+//ACTUAL TIME OF SERVICE
+
+document.querySelector("#qualYear");
+document.querySelector("#qualMonth");
+document.querySelector("#qualDay");
