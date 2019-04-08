@@ -1,0 +1,37 @@
+.control-label{
+
+text-align: left !important;
+
+}
+h2 {
+	text-align: center;
+	padding-bottom: 30px;
+}
+.ll{
+	padding-right: 0px !important;
+}
+.uu{
+	padding: 0px !important;
+	margin: 0px !important;
+	text-align: center;
+}
+
+.ux{
+	padding-right: 0px !important;
+	margin-right: 0px !important;
+}
+
+.uy{
+	padding-left: 0px !important;
+	margin-left: 0px !important;
+}
+
+.uuu{
+	padding: 0px !important;
+	margin: 0px ;
+	margin-top: 5px !important
+}
+
+.bton{
+	text-align: center;
+}

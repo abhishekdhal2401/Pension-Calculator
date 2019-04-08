@@ -1,145 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-    <head>
-      <meta charset="utf-8">
+<head>
+  <title>Superannuation</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- <!-- font type used is montserrat and lato from google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" />
   <!--  jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
 <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
-
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>-->
-
-
-
-
-  <link rel="stylesheet" href="style.css">
-
-<!-- this is a favicon -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <!-- this is a favicon -->
   <link rel="shortcut icon" type="image/png" href="favicon.png" >
 
-  <title>Pension calculator</title>
-
-
-
-
-    </head>
-
+  <link rel="stylesheet" href="style1234.css">
+</head>
 <body>
-    <div id="loading"></div>
-
-
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#myPage"><img src="images/logo.png" alt="logo" width="150px" ></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#calculate">CALCULATE</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<div class="container-fluid bg-grey">
 
 <div class="container">
+  <h2>SUPERANNUATION</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-3">1: Date Of Birth</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="dobDay" placeholder="DAY" min="1" max="31" >
+      </div>
+
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="dobMonth" placeholder="MONTH" min="1" max="12" >
+      </div>
+
+      <div class="col-sm-3">
+        <input type="number" class="form-control" id="dobYear" placeholder="YEAR" min="1900" max="2000">
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">2: Date Of Joining :</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="dayOfJoin" placeholder="DAY" min="1" max="31" >
+      </div>
+
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="monthOfJoin" placeholder="MONTH" min="1" max="12" >
+      </div>
+
+      <div class="col-sm-3">
+        <input type="number" class="form-control" id="yearOfJoin" placeholder="YEAR" min="1900" >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-3">3: Date Of Retirement :</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31" disabled>
+      </div>
+
+      <div class="col-sm-2">
+        <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12" disabled>
+      </div>
+
+      <div class="col-sm-3">
+        <input type="number" class="form-control" id="yearOfRetire" placeholder="YEAR" min="1900" disabled>
+      </div>
+    </div>
+
+    <br>
+    <br>
 
 
- <form id="form-inp">
-  1.Date of Birth:
-  <input type="number" placeholder="DAY" min="1" max="31" id="dobDay"><input type="number" placeholder="MONTH" min="1" max="12" id="dobMonth" ><input type="number" placeholder="YEAR" min="1900" max="2000" id="dobYear">
-  <br><br>
+    <div class="form-group">
+      <label class="control-label col-sm-5">4: Peroid Not Qualified For Pension/Gratuity :</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="dayNotQual" disabled>
+      </div>
 
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="monthNotQual" disabled>
+      </div>
 
-  2.Date of Joining:
-  <input type="number" placeholder="DAY" min="1" max="31" ><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfJoin"><input type="number" placeholder="YEAR" min="1900" >
-  <br><br>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="yearNotQual" disabled>
+      </div>
+    </div>
 
+    <div class="calc-holiday">
 
-  3.Date of Retirement:
-  <input type="number" placeholder="DAY" min="1" max="31" id="dayOfRetire" disabled><input type="number" placeholder="MONTH" min="1" max="12" id="monthOfRetire" disabled><input type="number" placeholder="YEAR" min="1900" id="yearOfRetire" disabled>
-  <br><br>
+    <div class="form-group">
+      <label class="control-label col-sm-5"> a) Service rendered before attatining the age of 18 years:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-13">
+      </div>
 
-  4.Period not qualified for Pension/Gratuity:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100" id="yearNotQual" disabled><input type="number" name="numbermonth" min="0" max="12" placeholder="month" id="monthNotQual" disabled><input type="number" name="numberday" id="dayNotQual" placeholder="day" min="1" max="31" disabled><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-12" >
+      </div>
 
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-11">
+      </div>
+    </div>
 
-<div class="calc-holiday">
-  1.Service rendered before attatining the age of 18 years:
-<input type="number" name="numberyear" placeholder="year" min="1" max="100"id="four-11"><input type="number" id="four-12"name="numbermonth" min="0" max="12" placeholder="month"><input id="four-13" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+    <div class="form-group">
+      <label class="control-label col-sm-5"> b) Service as apprentice except SAS apprentice:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-23">
+      </div>
 
-  2.Service as apprentice except SAS apprentice:
-<input type="number" name="numberyear" placeholder="year" min="1" max="100"id="four-21"><input id="four-22" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-23" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-22">
+      </div>
 
-  3.Unauthorized absence treated as "dies non" :
-<input id="four-31" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-32" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-33" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-21">
+      </div>
+    </div>
 
-  4.Over stay of leave:
-<input id="four-41" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-42" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-43" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+    <div class="form-group">
+      <label class="control-label col-sm-5"> c) Unauthorized absence treated as "dies non":</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-33">
+      </div>
 
-  5.EOL without MC:
-<input id="four-51" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-52" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-53" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-32">
+      </div>
 
-  6.Suspension followed by major penalty:
-<input id="four-61" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-62" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-63" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-31" >
+      </div>
+    </div>
 
-</div>
+    <div class="form-group">
+      <label class="control-label col-sm-5"> d) Over stay of leave:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-43">
+      </div>
 
-   5.Total QS counted for Pension/Gratutiy:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"> = <input type="text" name="halfyears" placeholder="Half Years"><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-42">
+      </div>
 
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-41">
+      </div>
+    </div>
 
-     6.Sum of Basic Pay and NPA of last month: Rs.:
-  <input type="number" name="numberbasic" placeholder="Rupees" id="lastMonth"><br>
+    <div class="form-group">
+      <label class="control-label col-sm-5"> e) EOL without MC:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-53">
+      </div>
 
-    7.Sum of Basic Pay and NPA of last 10 months: Rs.:
-  <input type="number" name="number10months" placeholder="Rupees" id="tenMonths"><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-52">
+      </div>
 
-      8.DA:
-  <input type="number" name="DA%" placeholder="Percent" id="daPercent"> % <br>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-51">
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label class="control-label col-sm-5"> f) Suspension followed by major penalty:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-63">
+      </div>
 
-   9.DA:Rs.
-  <input type="number" name="DA" placeholder="Rupees" disabled id="daRS"><br>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="four-62">
+      </div>
 
-  10.NPA:Rs.
-  <input type="number" name="NPARs" placeholder="Rupees"><br>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="four-61">
+      </div>
+    </div>
 
-  11.Emolument for Gratuity (BP+DA+NPA) Rs.:
-  <input type="number" name="emolumentGratuity" placeholder="Rupees"><br>
+  </div>
 
-  12.Emolument for Pension (BP+NPA) Rs.:
-  <input type="number" name="emolumentPension" placeholder="Rupees"><br>
+    <br>
+    <br>
 
-  13.Commutation:
-  <input type="number" name="DA%" placeholder="Percent"> % (MAX 40%)<br>
+    <div class="form-group">
+      <label class="control-label col-sm-3 ll">5: Total QS counted for Pension/Gratuity:</label>
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="" disabled>
+      </div>
 
+      <div class="col-sm-2">
+        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="" disabled>
+      </div>
 
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Calculate
-  </button>
+      <div class="col-sm-2 ux">
+        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="" disabled>
+      </div>
+      <div class="col-sm-1 uu">=</div>
+
+      <div class="col-sm-2 uy">
+        <input type="number" class="form-control" name="halfyears" placeholder="Half Years" id="yearNotQual" disabled>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">6: Sum of Basic Pay and NPA of last month: (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="numberbasic" placeholder="Rupees" id="lastMonth">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">7: Sum of Basic Pay and NPA of last 10 months: (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="number10months" placeholder="Rupees" id="tenMonths">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">8: DA: (%):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="DA%" placeholder="Percent" id="daPercent">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">9: DA: (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="DA" placeholder="Rupees" id="daRS" disabled>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">10: NPA: (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="NPARs" placeholder="Rupees" id="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">11: Emolument for Gratuity (BP+DA+NPA) (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="emolumentGratuity" placeholder="Rupees" id="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">12: Emolument for Pension (BP+NPA) (Rs.):</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="emolumentPension" placeholder="Rupees" id="">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-5">13: Commutation :</label>
+      <div class="col-sm-3">
+        <input type="number" class="form-control" name="DA%" placeholder="Percent" id="">
+      </div>
+      <div class="form-group">
+      <label class="col-sm-3 uuu">
+         % (MAX 40%)
+       </label>
+      </div>
+    </div>
+
+    <div class="bton">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Submit
+    
+      </button>
+    </div>
+    <br>
+    <br>
+    <br>
+
 
 
   <!-- Modal -->
@@ -205,12 +348,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="function.js"></script>
+
+    <script src="function.js"></script>
   <script src="supercalc.js"></script>
+  </form>
+</div>
 
-    </body>
-
-
-
-
+</body>
 </html>
