@@ -1,6 +1,5 @@
 
   body, html {
-  
   height: 100%;
 }
 
@@ -40,12 +39,11 @@
     font-weight: 400;
     margin-bottom: 10px;
     letter-spacing: .5px;
-  } 
+  }
 
- 
   .back-image{
     background-image: url("images/ee.jpg");
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -54,8 +52,7 @@
     top:0;
     bottom: 0;
     height:100vh;
-
-  } 
+}
 
   .jumbotron {
     top:0;
@@ -77,14 +74,16 @@
     height: 350px;
     width: 500px;
     margin: auto;
-    
+
   }
 
   .imagepad1 img{
     height: 360px;
     margin-top: 70px;
   }
-
+  .bg-white{
+    background-color: white;
+  }
 
   .bg-grey {
     background-color: #f6f6f6;
@@ -129,7 +128,7 @@
     font-style: normal;
   }
   .panel {
-    border: 1px solid #f4511e; 
+    border: 1px solid #f4511e;
     border-radius:0 !important;
     transition: box-shadow 0.5s;
   }
@@ -138,7 +137,7 @@
   }
   .panel-footer .btn:hover {
     border: 1px solid #f4511e;
-    background-color: #363636 !important; 
+    background-color: #363636 !important;
     color: #fff;
     border-radius: 24px;
   }
@@ -177,7 +176,7 @@
   background-image: url("images/foot.jpg");
 
   /* Full height */
-  height: 70%; 
+  height: 70%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -208,7 +207,7 @@
   }
   .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
-    
+
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
@@ -251,7 +250,7 @@
     0% {
       opacity: 0;
       transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       transform: translateY(0%);
@@ -261,7 +260,7 @@
     0% {
       opacity: 0;
       -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
@@ -288,3 +287,7 @@
   }
   }
 
+
+  #out-jumbo{
+    background: #fff !important;
+  }

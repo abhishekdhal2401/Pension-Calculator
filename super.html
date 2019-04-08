@@ -83,25 +83,29 @@
   <br><br>
 
   4.Period not qualified for Pension/Gratuity:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+  <input type="number" name="numberyear" placeholder="year" min="1" max="100" id="yearNotQual" disabled><input type="number" name="numbermonth" min="0" max="12" placeholder="month" id="monthNotQual" disabled><input type="number" name="numberday" id="dayNotQual" placeholder="day" min="1" max="31" disabled><br>
 
-          1.Service rendered before attatining the age of 18 years:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
 
-          2.Service as apprentice except SAS apprentice:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+<div class="calc-holiday">
+  1.Service rendered before attatining the age of 18 years:
+<input type="number" name="numberyear" placeholder="year" min="1" max="100"id="four-11"><input type="number" id="four-12"name="numbermonth" min="0" max="12" placeholder="month"><input id="four-13" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
 
-          3.Unauthorized absence treated as "dies non" :
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+  2.Service as apprentice except SAS apprentice:
+<input type="number" name="numberyear" placeholder="year" min="1" max="100"id="four-21"><input id="four-22" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-23" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
 
-          4.Over stay of leave:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+  3.Unauthorized absence treated as "dies non" :
+<input id="four-31" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-32" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-33" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
 
-          5.EOL without MC:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+  4.Over stay of leave:
+<input id="four-41" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-42" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-43" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
 
-          6.Suspension followed by major penalty:
-  <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+  5.EOL without MC:
+<input id="four-51" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-52" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-53" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+  6.Suspension followed by major penalty:
+<input id="four-61" type="number" name="numberyear" placeholder="year" min="1" max="100"><input id="four-62" type="number" name="numbermonth" min="0" max="12" placeholder="month"><input id="four-63" type="number" name="numberday" placeholder="day" min="1" max="31"><br>
+
+</div>
 
    5.Total QS counted for Pension/Gratutiy:
   <input type="number" name="numberyear" placeholder="year" min="1" max="100"><input type="number" name="numbermonth" min="0" max="12" placeholder="month"><input type="number" name="numberday" placeholder="day" min="1" max="31"> = <input type="text" name="halfyears" placeholder="Half Years"><br>
@@ -133,27 +137,76 @@
   <input type="number" name="DA%" placeholder="Percent"> % (MAX 40%)<br>
 
 
-  <button class="btn btn-lg">Calculate</button>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Calculate
+  </button>
 
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="margin-top:55px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Pension Details</h4>
+        </div>
+        <div class="modal-body">
 
+          <div class="">
+          <span><h4>Date of Retirement:</h4>kjaskldjasd</span>
+          </div>
+          <div class="">
+            <h4>Total Qualifying Service:</h4>
+          </div>
+
+          <div class="">
+            <h4>Monthly Pension:</h4>
+          </div>
+
+          <div class="">
+            <h4>Normal Pension:</h4>
+          </div>
+
+          <div class="">
+            <h4>Amount of Commuted Pension:</h4>
+          </div>
+
+          <div class="">
+            <h4>Amount of Gratuity:</h4>
+          </div>
+
+          <div class="">
+            <h4>Amount of Leave Salary:</h4>
+          </div>
+
+          <div class="">
+            <h4>Amount of C.G.E.G.I.S :</h4>
+          </div>
+
+          <div class="">
+            <h4>Total Lumpsome Amount excluding Monthly Pension :</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </form>
 
-
+</div>
 
 </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-</div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script src="bootstrap-datepicker.js"></script>-->
-    <script src="function.js"></script>
-    <script src="supercalc.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="function.js"></script>
+  <script src="supercalc.js"></script>
 
     </body>
 
