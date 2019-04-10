@@ -1,3 +1,4 @@
+
 body{
 	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/foot.jpg');
 	background-attachment: fixed;
@@ -20,6 +21,7 @@ body{
 text-align: left !important;
 
 }
+
 hr{
 	padding-top: 0px;
 	margin-top: 0px;
@@ -31,15 +33,18 @@ h2 {
 	margin-bottom: 0px ;
 	font-weight: 600;
 	letter-spacing: 2px;
+
 }
 .ll{
 	padding-right: 0px !important;
 }
 .uu{
 	padding: 0px !important;
+
 	margin: 0px ;
 	text-align: center;
 	margin-top: 5px !important
+
 }
 
 .ux{
@@ -60,7 +65,9 @@ h2 {
 
 .bton{
 	text-align: center;
+
 }
 .btonc{
 	margin: 20px;
+
 }
