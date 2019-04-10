@@ -5,7 +5,35 @@ var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
 var retireYear = document.getElementById('yearOfRetire');
 
-if (retireYear) {
+function retireRound(){
+  if (typeof dobDay.value!=NaN&&typeof dobMonth.value!=NaN&&typeof dobYear.value!=NaN) {
+    if (dobDay.value<3) {
+      retireYear.value=dobYear.value;
+        if (dobYear.value%4==0&&dobYear.value%100!=0) {
+          calender_retire[1]=29;
+          }
+          if (dobMonth.value==1) {
+            retireMonth.value=12;
+            retireYear.value=dobYear.value-1;
+            retireDay.value=31;
+          }
+          else {
+            retireDay.value=calender_retire[dobMonth.value-2];
+            retireMonth.value=dobMonth.value-1;
+          }
+          console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
+
+    }
+    else {
+      if (dobYear.value%4==0&&dobYear.value%100!=0) {
+        calender_retire[1]=29;
+      }
+        retireMonth.value=dobMonth.value;
+        retireYear.value=dobYear.value;
+        retireDay.value=calender_retire[dobMonth.value-1];
+        console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
+    }
+  }
 
 }
 //YEAR OF BIRTH INPUTS
@@ -20,21 +48,18 @@ var yearOfJoin = document.getElementById('yearOfJoin');
 
 // YEAR OF RETIREMENT CALCULATION
 dobDay.addEventListener("change",function(){
-
-  retireDay.value = dobDay.value  ;
-
+  // retireDay.value = dobDay.value;
+  retireRound();
 });
 
 dobMonth.addEventListener("change",function(){
-
-  retireMonth.value = dobMonth.value;
-
+//  retireMonth.value = dobMonth.value;
+  retireRound();
 });
 
 dobYear.addEventListener("change",function(){
-
-  retireYear.value = parseInt(dobYear.value)+agetoRetire;
-
+//  retireYear.value = parseInt(dobYear.value)+agetoRetire;
+  retireRound();
 });
 
 //DA %
@@ -203,7 +228,6 @@ document.getElementById('secondChange').addEventListener("change",function(){
 
 
 efg.value = parseFloat(daRS.value) + great + parseFloat(npa.value);
-efp.value = great + parseFloat(npa.value);	
+efp.value = great + parseFloat(npa.value);
 
 });
-
