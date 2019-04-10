@@ -5,7 +5,9 @@ var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
 var retireYear = document.getElementById('yearOfRetire');
 
+if (retireYear) {
 
+}
 //YEAR OF BIRTH INPUTS
 var dobDay = document.getElementById('dobDay');
 var dobMonth = document.getElementById('dobMonth');
@@ -54,6 +56,7 @@ var daRS = document.getElementById('daRS');
 
 
 // DA Rupees INPUTS
+var great;
 
 daPercent.addEventListener("change",compare);
 lastMonth.addEventListener("change",compare);
@@ -62,10 +65,12 @@ tenMonths.addEventListener("change",compare);
 function compare(){
   if(lastMonth.value > tenMonths.value){
   daRupees = (parseFloat(lastMonth.value) * parseFloat(daPercent.value))/100.0;
+  great = parseFloat(lastMonth.value);
 }
 
 else{
   daRupees = (parseFloat(tenMonths.value) * parseFloat(daPercent.value))/100.0;
+  great = parseFloat(tenMonths.value);
 }
 
     daRS.value = String(daRupees);
@@ -188,3 +193,17 @@ function calc_time_span() {
      document.querySelector("#qualDay").value=day;
      document.querySelector("#totalHalfYear").value=hf;
    }
+
+
+var npa=document.querySelector("#npa");
+var efg=document.querySelector("#efg");
+var efp=document.querySelector("#efp");
+
+document.getElementById('secondChange').addEventListener("change",function(){
+
+
+efg.value = parseFloat(daRS.value) + great + parseFloat(npa.value);
+efp.value = great + parseFloat(npa.value);	
+
+});
+

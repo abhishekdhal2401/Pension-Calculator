@@ -219,7 +219,7 @@
 
     <br>
     <br>
-
+    <div id="secondChange">
     <div class="form-group">
       <label class="control-label col-sm-5">6: Sum of Basic Pay and NPA of last month: (Rs.):</label>
       <div class="col-sm-3">
@@ -254,28 +254,29 @@
     <div class="form-group">
       <label class="control-label col-sm-5">10: NPA: (Rs.):</label>
       <div class="col-sm-3">
-        <input type="number" class="form-control" name="NPARs" placeholder="Rupees" id="">
+        <input type="number" class="form-control" name="NPARs" placeholder="Rupees" id="npa">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-5">11: Emolument for Gratuity (BP+DA+NPA) (Rs.):</label>
       <div class="col-sm-3">
-        <input type="number" class="form-control" name="emolumentGratuity" placeholder="Rupees" id="">
+        <input type="number" class="form-control" name="emolumentGratuity" placeholder="Rupees" id="efg" disabled>
       </div>
     </div>
+</div>
 
     <div class="form-group">
       <label class="control-label col-sm-5">12: Emolument for Pension (BP+NPA) (Rs.):</label>
       <div class="col-sm-3">
-        <input type="number" class="form-control" name="emolumentPension" placeholder="Rupees" id="">
+        <input type="number" class="form-control" name="emolumentPension" placeholder="Rupees" id="efp" disabled>
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-5">13: Commutation :</label>
       <div class="col-sm-3">
-        <input type="number" class="form-control" name="DA%" placeholder="Percent" id="">
+        <input type="number" class="form-control" name="DA%" placeholder="Percent" id="comm" max="40" min="0">
       </div>
       <div class="form-group">
       <label class="col-sm-3 uuu">
@@ -288,7 +289,12 @@
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Submit
 
       </button>
+
+            <button type="button" class="btn btn-primary btn-lg" >Reset
+
+      </button>
     </div>
+
     <br>
     <br>
     <br>
