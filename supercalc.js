@@ -8,13 +8,13 @@ var retireYear = document.getElementById('yearOfRetire');
 function retireRound(){
   if (typeof dobDay.value!=NaN&&typeof dobMonth.value!=NaN&&typeof dobYear.value!=NaN) {
     if (dobDay.value<3) {
-      retireYear.value=dobYear.value;
+      retireYear.value=parseInt(dobYear.value) + agetoRetire;
         if (dobYear.value%4==0&&dobYear.value%100!=0) {
           calender_retire[1]=29;
           }
           if (dobMonth.value==1) {
             retireMonth.value=12;
-            retireYear.value=dobYear.value-1;
+            retireYear.value=parseInt(dobYear.value)-1 + agetoRetire;
             retireDay.value=31;
           }
           else {
@@ -29,7 +29,7 @@ function retireRound(){
         calender_retire[1]=29;
       }
         retireMonth.value=dobMonth.value;
-        retireYear.value=dobYear.value;
+        retireYear.value=parseInt(dobYear.value) + agetoRetire;
         retireDay.value=calender_retire[dobMonth.value-1];
         console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
     }
@@ -229,5 +229,51 @@ document.getElementById('secondChange').addEventListener("change",function(){
 
 efg.value = parseFloat(daRS.value) + great + parseFloat(npa.value);
 efp.value = great + parseFloat(npa.value);
+
+});
+
+
+
+
+document.getElementById('submit').addEventListener("click",function(){
+
+
+    document.getElementById('retireShow').innerHTML = " " + retireDay.value + "/" + retireMonth.value + "/" + retireYear.value;
+    document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
+
+//CALCULATION MODAL Gratuity
+    var sg;
+    var rg;
+    var halfYearCheck = parseInt(totalHalfYear.value);
+    var gratuityShow = document.getElementById('gratuity');
+
+    if(halfYearCheck < 10){
+      //Only service gratuity
+      console.log(1212);
+      sg = 0.5 * (parseInt(efg.value) * halfYearCheck);
+      gratuityShow.innerHTML = "₹ " + sg;
+
+    }
+    else if(halfYearCheck >= 10 && halfYearCheck < 20){
+      //Service and retirement gratuity
+      sg =  0.5 * (parseInt(efg.value) * halfYearCheck);
+      // halfYearCheck atmost 33/2 and rg = 20,00,000
+      rg = 0.25 * parseInt(efg.value) * halfYearCheck;
+      if(rg >= 2000000){
+        rg = 2000000;
+      }
+
+
+      gratuityShow.innerHTML = " ₹ " + (sg + rg);
+
+
+    }
+    else{
+      //Retirement gratuity and pension
+
+
+    }
+
+
 
 });
