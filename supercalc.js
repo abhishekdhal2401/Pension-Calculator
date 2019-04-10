@@ -242,14 +242,18 @@ document.getElementById('submit').addEventListener("click",function(){
     document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
 
 //CALCULATION MODAL Gratuity
+    var comm = document.querySelector("#comm");
+    var supcommfac = 8.287;
     var sg;
     var rg;
     var halfYearCheck = parseInt(totalHalfYear.value);
     var gratuityShow = document.getElementById('gratuity');
+    var basicpension = document.querySelector("#basicpension");
+
+    comm.value=comm.value?comm.value:0;
 
     if(halfYearCheck < 10){
       //Only service gratuity
-      console.log(1212);
       sg = 0.5 * (parseInt(efg.value) * halfYearCheck);
       gratuityShow.innerHTML = "₹ " + sg;
 
@@ -273,7 +277,11 @@ document.getElementById('submit').addEventListener("click",function(){
 
 
     }
-
-
-
+  basicpension.innerHTML = " ₹ "+ (parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100);
+  if (parseInt(comm.value)>0) {
+    document.querySelector("#commVal").innerHTML= "Commutation Value: ₹ "+  Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2);
+  }
+  else {
+    document.querySelector("#commVal").innerHTML="";
+  }
 });
