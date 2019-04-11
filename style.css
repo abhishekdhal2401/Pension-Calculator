@@ -40,6 +40,10 @@
     margin-bottom: 10px;
     letter-spacing: .5px;
   }
+  #about
+  {
+    line-height: 2em !important;
+  }
 
   .back-image{
     background-image: url("images/ee.jpg");

@@ -67,3 +67,24 @@ h2 {
 	margin: 20px;
 
 }
+.bg-grey{
+	background-color: #EEEEEE;
+}
+#myModalLabel{
+	text-align: center;
+	letter-spacing: 1.2px;
+	font-weight: bold !important;
+	font-size: 30px !important;
+}
+
+.modal-body{
+	line-height: 30px;
+	letter-spacing: 1.2px;
+	padding-left: 50px;
+	font-weight: bold !important;
+
+}
+#retireShow, #qualShow, #gratuity, #basicpension{
+	color: red;
+	font-weight: bold !important; 
+}
