@@ -115,9 +115,18 @@ monthNotQual = parseInt(four1m.value) + parseInt(four2m.value) + parseInt(four3m
 
 dayNotQual = parseInt(four1d.value) + parseInt(four2d.value) + parseInt(four3d.value) + parseInt(four4d.value) + parseInt(four5d.value) + parseInt(four6d.value) ;
 
-yearNotQual = yearNotQual+parseInt(monthNotQual/12);
-monthNotQual = (monthNotQual%12)+parseInt(dayNotQual/31);
-dayNotQual = dayNotQual%31;
+yearNotQual = (yearNotQual)?yearNotQual:0;
+monthNotQual = (monthNotQual)?monthNotQual:0;
+dayNotQual = (dayNotQual)?dayNotQual:0;
+
+if (dayNotQual/31>0) {
+  monthNotQual = monthNotQual+ parseInt(dayNotQual/31);
+  dayNotQual=dayNotQual%31;
+}
+if (monthNotQual/12>0) {
+  yearNotQual= yearNotQual + parseInt(monthNotQual/12);
+  monthNotQual=monthNotQual%12;
+}
 
 document.querySelector("#dayNotQual").value= dayNotQual;
 document.querySelector("#monthNotQual").value= monthNotQual;
@@ -179,15 +188,28 @@ function calc_time_span() {
     calender_retire[1]=29;
   }
 
-  var day = calender_join[moj-1]-doj+dor;
+  var day = calender_join[moj-1] - doj + dor;
   var month= 12-moj+mor-1;
-  var year =yor-yoj-2;
+  var year =yor-yoj-1;
+  console.log(year);
+  console.log(month%12+"  "+day);
+  if (day/31>0) {
+    month = month+ parseInt(day/31);
+    day=day%31;
+  }
+  if (month/12>0) {
+    year= year + parseInt(month/12);
+    month=month%12;
+  }
 
-  actualYear = year + parseInt(month/12);
-  actualMonth = (month%12) + parseInt(day/31);
-  actualDay = day%31;
-  
-  console.log(day+"/"+month+"/"+year+"actual Service");
+  actualDay=day;
+  actualMonth=month;
+  actualYear=year;
+
+
+
+  console.log(actualDay+"/"+actualMonth+"/"+actualYear+"  : actual service");
+  //console.log(actualDay+"/"actualMonth+"/"+actualYear+"  :actual Service");
 
 }
 
@@ -199,11 +221,18 @@ function calc_time_span() {
    function totalServiceQualified(){
      var day = 31-dayNotQual+actualDay;
      var month = 12-monthNotQual+actualMonth-1;
-     var year = actualYear-yearNotQual-2;
+     var year = actualYear-yearNotQual-1;
 
-     year = year + parseInt(month/12);
-     month = (month%12)+parseInt(day/31);
-     day = day%31;
+
+     if (day/31>0) {
+       month = month+ parseInt(day/31);
+       day=day%31;
+     }
+     if (month/12>0) {
+       year= year + parseInt(month/12);
+       month=month%12;
+     }
+
 
      var hf=year*2;
      if(hf!=NaN){
@@ -245,15 +274,17 @@ document.getElementById('submit').addEventListener("click",function(){
 
 //CALCULATION MODAL Gratuity
     var comm = document.querySelector("#comm");
-    var supcommfac = 8.287;
+    var supcommfac = 8.194;
     var sg;
     var rg;
     var halfYearCheck = parseInt(totalHalfYear.value);
     var gratuityShow = document.getElementById('gratuity');
     var basicpension = document.querySelector("#basicpension");
 
-    comm.value=comm.value?comm.value:0;
-
+    // comm.value=comm.value?comm.value:0;
+if (!(comm.value)) {
+  comm.value=0;
+}
     if(halfYearCheck < 10){
       //Only service gratuity
       sg = 0.5 * (parseInt(efg.value) * halfYearCheck);
