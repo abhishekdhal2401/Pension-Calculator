@@ -88,14 +88,14 @@ lastMonth.addEventListener("change",compare);
 tenMonths.addEventListener("change",compare);
 
 function compare(){
-  if(lastMonth.value > tenMonths.value){
+  if(parseInt(lastMonth.value) > parseInt(tenMonths.value)/10){
   daRupees = (parseFloat(lastMonth.value) * parseFloat(daPercent.value))/100.0;
   great = parseFloat(lastMonth.value);
 }
 
 else{
-  daRupees = (parseFloat(tenMonths.value) * parseFloat(daPercent.value))/100.0;
-  great = parseFloat(tenMonths.value);
+  daRupees = (parseFloat(tenMonths.value)/10 * parseFloat(daPercent.value))/100.0;
+  great = parseFloat(tenMonths.value)/10;
 }
 
     daRS.value = String(daRupees);
@@ -186,6 +186,8 @@ function calc_time_span() {
   actualYear = year + parseInt(month/12);
   actualMonth = (month%12) + parseInt(day/31);
   actualDay = day%31;
+  
+  console.log(day+"/"+month+"/"+year+"actual Service");
 
 }
 
@@ -274,8 +276,12 @@ document.getElementById('submit').addEventListener("click",function(){
     }
     else{
       //Retirement gratuity and pension
+      rg = 0.25 * parseInt(efg.value) * halfYearCheck;
+      if(rg >= 2000000){
+        rg = 2000000;
+      }
 
-
+      gratuityShow.innerHTML = " ₹ " + (rg);
     }
   basicpension.innerHTML = " ₹ "+ (parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100);
   if (parseInt(comm.value)>0) {

@@ -21,7 +21,6 @@ body{
 text-align: left !important;
 
 }
-
 hr{
 	padding-top: 0px;
 	margin-top: 0px;
@@ -40,13 +39,10 @@ h2 {
 }
 .uu{
 	padding: 0px !important;
-
 	margin: 0px ;
 	text-align: center;
-	margin-top: 5px !important
-
+	margin-top: 5px !important;
 }
-
 .ux{
 	padding-right: 0px !important;
 	margin-right: 0px !important;
