@@ -288,7 +288,7 @@ if (!(comm.value)) {
     if(halfYearCheck < 10){
       //Only service gratuity
       sg = 0.5 * (parseInt(efg.value) * halfYearCheck);
-      gratuityShow.innerHTML = "₹ " + sg;
+      gratuityShow.innerHTML = " " + sg.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 
     }
     else if(halfYearCheck >= 10 && halfYearCheck < 20){
@@ -301,7 +301,7 @@ if (!(comm.value)) {
       }
 
 
-      gratuityShow.innerHTML = " ₹ " + (sg + rg);
+      gratuityShow.innerHTML = " " + ((sg + rg).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
 
 
     }
@@ -312,13 +312,20 @@ if (!(comm.value)) {
         rg = 2000000;
       }
 
-      gratuityShow.innerHTML = " ₹ " + (rg);
+
+//console.log(number.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
+      gratuityShow.innerHTML =" " + (rg.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
     }
-  basicpension.innerHTML = " ₹ "+ (parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100);
+  basicpension.innerHTML = " "+ ((parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100)).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});;
   if (parseInt(comm.value)>0) {
-    document.querySelector("#commVal").innerHTML= "Commutation Value: ₹ "+  Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2);
+    document.querySelector("#commVal").innerHTML= "Commutation Value: ₹ "+  Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
   }
   else {
     document.querySelector("#commVal").innerHTML="";
   }
+});
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
 });

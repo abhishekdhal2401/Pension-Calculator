@@ -1,4 +1,6 @@
 
+
+
 body{
 	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/foot.jpg');
 	background-attachment: fixed;
@@ -86,5 +88,17 @@ h2 {
 }
 #retireShow, #qualShow, #gratuity, #basicpension{
 	color: red;
-	font-weight: bold !important; 
+	font-weight: bold !important;
+}
+
+#info-icon{
+	font-size: 15px;
+	color: orange;
+	font-weight: 100;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#info-icon:hover{
+	color:#f4511e;
 }

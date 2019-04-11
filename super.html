@@ -85,7 +85,7 @@
       <div id="serviceNotQualified">
         <div id="totalQualifiedService">
           <div class="form-group">
-            <label class="control-label col-sm-5">4: Peroid Not Qualified For Pension/Gratuity :</label>
+            <label class="control-label col-sm-5">4: Period Not Qualified For Pension/Gratuity :</label>
 
           <div class="col-sm-2">
             <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="dayNotQual" disabled>
@@ -120,7 +120,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-5"> b) Service as apprentice except SAS apprentice:</label>
+          <label class="control-label col-sm-5"> b) Service as apprentice except SAS apprentice: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="SAS - FULL FORM"></span></label>
           <div class="col-sm-2">
             <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-23">
           </div>
@@ -166,7 +166,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-5"> e) EOL without MC:</label>
+          <label class="control-label col-sm-5"> e) EOL without MC: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Extra Ordinary Leave without Medical Certificate"></span></label>
           <div class="col-sm-2">
             <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-53">
           </div>
@@ -200,7 +200,7 @@
           <br>
 
     <div class="form-group">
-      <label class="control-label col-sm-3 ll">5: Total QS counted for Pension/Gratuity:</label>
+      <label class="control-label col-sm-3 ll">5: Total QS counted for Pension/Gratuity: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="QS - Qualifying Service"></span></label>
       <div class="col-sm-2">
         <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="qualDay" disabled>
       </div>
@@ -303,7 +303,7 @@
 
       </button>
 
-            <button type="Reset" class="btn btn-danger btonc" >Reset
+            <button  id="reset" type="Reset" class="btn btn-danger btonc" >Reset
 
 
       </button>
@@ -325,23 +325,23 @@
         </div>
         <div class="modal-body bg-grey">
 
-          <div class="">
+          <div id="row" class="">
           <span>Date of Retirement:<span id="retireShow"></span></span>
           </div>
 
-          <div class="">
+          <div id="row" class="">
             <span>Total Qualifying Service:<span id="qualShow"></span></span>
           </div>
 
-          <div class="">
+          <div id="row" class="">
             <span>Amount of Gratuity:<span id="gratuity"></span></span>
           </div>
 
-          <div class="">
+          <div id="row" class="">
             <span>Basic Pension: <span id="basicpension"></span> </span>
           </div>
 
-          <div id="commVal">
+          <div id="row" id="commVal">
 
           </div>
 
@@ -367,6 +367,7 @@
 
     <script src="function.js"></script>
   <script src="supercalc.js"></script>
+
   </form>
 </div>
 
