@@ -1,4 +1,6 @@
 
+
+
 body{
 	background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/foot.jpg');
 	background-attachment: fixed;
@@ -21,7 +23,6 @@ body{
 text-align: left !important;
 
 }
-
 hr{
 	padding-top: 0px;
 	margin-top: 0px;
@@ -40,13 +41,10 @@ h2 {
 }
 .uu{
 	padding: 0px !important;
-
 	margin: 0px ;
 	text-align: center;
-	margin-top: 5px !important
-
+	margin-top: 5px !important;
 }
-
 .ux{
 	padding-right: 0px !important;
 	margin-right: 0px !important;
@@ -60,7 +58,7 @@ h2 {
 .uuu{
 	padding: 0px !important;
 	margin: 0px ;
-	margin-top: 5px !important
+	margin-top: 5px !important;
 }
 
 .bton{
@@ -70,4 +68,43 @@ h2 {
 .btonc{
 	margin: 20px;
 
+}
+.bg-grey{
+	background-color: #EEEEEE;
+}
+#myModalLabel{
+	text-align: center;
+	letter-spacing: 1.2px;
+	font-weight: bold !important;
+	font-size: 30px !important;
+}
+
+.modal-body{
+	line-height: 30px;
+	letter-spacing: 1.2px;
+	padding-left: 50px;
+	font-weight: bold !important;
+
+}
+
+#retireShow, #qualShow, #gratuity, #basicpension, .Bpay, #commVal{
+	color: red;
+	font-weight: bold !important;
+}
+
+#info-icon{
+	font-size: 15px;
+	color: orange;
+	font-weight: 100;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#info-icon:hover{
+	color:#f4511e;
+}
+
+#enhancedPension,#normalPension,#from,#to,#normalTo{
+	color: red;
+	font-weight: bold !important;
 }

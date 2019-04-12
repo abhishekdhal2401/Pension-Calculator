@@ -1,41 +1,10 @@
-var agetoRetire = 60;
 
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
 var retireYear = document.getElementById('yearOfRetire');
 
-function retireRound(){
-  if (typeof dobDay.value!=NaN&&typeof dobMonth.value!=NaN&&typeof dobYear.value!=NaN) {
-    if (dobDay.value<3) {
-      retireYear.value=parseInt(dobYear.value) + agetoRetire;
-        if (dobYear.value%4==0&&dobYear.value%100!=0) {
-          calender_retire[1]=29;
-          }
-          if (dobMonth.value==1) {
-            retireMonth.value=12;
-            retireYear.value=parseInt(dobYear.value)-1 + agetoRetire;
-            retireDay.value=31;
-          }
-          else {
-            retireDay.value=calender_retire[dobMonth.value-2];
-            retireMonth.value=dobMonth.value-1;
-          }
-          console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
 
-    }
-    else {
-      if (dobYear.value%4==0&&dobYear.value%100!=0) {
-        calender_retire[1]=29;
-      }
-        retireMonth.value=dobMonth.value;
-        retireYear.value=parseInt(dobYear.value) + agetoRetire;
-        retireDay.value=calender_retire[dobMonth.value-1];
-        console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
-    }
-  }
-
-}
 //YEAR OF BIRTH INPUTS
 var dobDay = document.getElementById('dobDay');
 var dobMonth = document.getElementById('dobMonth');
@@ -45,22 +14,6 @@ var dobYear = document.getElementById('dobYear');
 var dayOfJoin = document.getElementById('dayOfJoin');
 var monthOfJoin = document.getElementById('monthOfJoin');
 var yearOfJoin = document.getElementById('yearOfJoin');
-
-// YEAR OF RETIREMENT CALCULATION
-dobDay.addEventListener("change",function(){
-  // retireDay.value = dobDay.value;
-  retireRound();
-});
-
-dobMonth.addEventListener("change",function(){
-//  retireMonth.value = dobMonth.value;
-  retireRound();
-});
-
-dobYear.addEventListener("change",function(){
-//  retireYear.value = parseInt(dobYear.value)+agetoRetire;
-  retireRound();
-});
 
 //DA %
 var daPercent = document.querySelector("#daPercent");
@@ -220,7 +173,7 @@ function calc_time_span() {
    document.querySelector("#serviceNotQualified").addEventListener("change",totalServiceQualified);
    timeOfService.addEventListener("change",totalServiceQualified);
    function totalServiceQualified(){
-     var day = 31-dayNotQual+actualDay;
+     var day = 31-dayNotQual+actualDay+1;
      var month = 12-monthNotQual+actualMonth-1;
      var year = actualYear-yearNotQual-1;
 
@@ -279,13 +232,26 @@ document.getElementById('submit').addEventListener("click",function(){
 
 //CALCULATION MODAL Gratuity
     var comm = document.querySelector("#comm");
-    var supcommfac = 8.194;
+    var commArray=[9.090,9.075,9.059,9.040,9.019,8.996,8.971,8.943,8.913,8.881,8.846,8.808,8.768,8.724,8.678,8.627,8.572,8.512,8.446,8.371,8.287,8.194]
+    var age=retireYear.value-dobYear.value;
     var sg;
     var rg;
     var halfYearCheck = parseInt(totalHalfYear.value);
     var gratuityShow = document.getElementById('gratuity');
     var basicpension = document.querySelector("#basicpension");
     var Bpay = document.querySelectorAll('.Bpay');
+
+ if(retireMonth.value<dobMonth.value){
+        age--;    
+    }
+    if(retireMonth.value == dobMonth.value){
+      if(retireDay.value<dobDay.value){
+        age--;   
+      }
+    }
+    var index=age-39
+    var commfac=commArray[index];
+
 
     // comm.value=comm.value?comm.value:0;
 if (!(comm.value)) {
@@ -325,12 +291,15 @@ Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN'
     }
   basicpension.innerHTML = " "+ ((parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100)).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});;
   if (parseInt(comm.value)>0) {
-    document.querySelector("#commVal").innerHTML= ""+  (Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
+    document.querySelector("#commVal").innerHTML= ""+  (Math.round(commfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
   document.querySelector("#commLabel").innerHTML="Commutation Value: ";}
   else {
     document.querySelector("#commVal").innerHTML="";
     document.querySelector("#commLabel").innerHTML="";
   }
+  if (age<39) {
+    document.querySelector("#commVal").innerHTML="";
+    document.querySelector("#commLabel").innerHTML="";}
 });
 
 

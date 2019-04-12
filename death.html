@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Superannuation</title>
+  <title>Death Pension</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 <body>
 
 <div class="container">
-  <h2>SUPERANNUATION</h2>
+  <h2>DEATH PENSION</h2>
 
   <hr>
 
@@ -62,17 +62,17 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-3">3: Date Of Retirement :</label>
+          <label class="control-label col-sm-3">3: Date Of Demise :</label>
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31" disabled>
+            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31">
           </div>
 
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12" disabled>
+            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12">
           </div>
 
           <div class="col-sm-3">
-            <input type="number" class="form-control" id="yearOfRetire" placeholder="YEAR" min="1900" disabled>
+            <input type="number" class="form-control" id="yearOfRetire" placeholder="YEAR" min="1900">
           </div>
         </div>
 
@@ -285,17 +285,7 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-5">13: Commutation :</label>
-      <div class="col-sm-3">
-        <input type="number" class="form-control" name="DA%" placeholder="Percent" id="comm" max="40" min="0">
-      </div>
-      <div class="form-group">
-      <label class="col-sm-3 uuu">
-         % (MAX 40%)
-       </label>
-      </div>
-    </div>
+
 
     <div class="bton">
 
@@ -325,29 +315,21 @@
         </div>
         <div class="modal-body bg-grey">
 
+
+
           <div >
-          <span>Date of Retirement:<span id="retireShow"></span></span>
+          <span>Gratuity: <span id="gratuity"></span></span>
           </div>
 
           <div >
-          <span>Gratuity:<span id="gratuity"></span></span>
+            <span>Basic Pension:-</span>
+            <ol>
+              <li>Enhanced Family Pension: <span id="enhancedPension"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;from(<span id="from"></span>) to (<span id="to"></span>)</li>
+              <li>Normal Family Pension: <span id="normalPension"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;from(<span id="normalTo"></span>)</li>
+            </ol>
           </div>
 
-          <div >
-              <span id="commLabel">Commutation Value: </span><span id="commVal"></span>
-          </div>
 
-          <div >
-            <span>Basic Pension: <span class="Bpay"></span> </span>
-          </div>
-
-          <div >
-            <span>Effective Family Pension: <span class="Bpay"></span> </span>
-          </div>
-
-          <div >
-            <span>Normal Family Pension: <span id="basicpension"></span> </span>
-          </div>
 
 
 
@@ -374,7 +356,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <script src="function.js"></script>
-  <script src="supercalc.js"></script>
+  <script src="deathcalc.js"></script>
 
   </form>
 </div>

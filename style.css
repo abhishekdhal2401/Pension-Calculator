@@ -34,11 +34,15 @@
   }
   h4 {
     font-size: 17px;
-    line-height: 1.375em;
+    line-height: 2em;
     color: #303030;
     font-weight: 400;
     margin-bottom: 10px;
     letter-spacing: .5px;
+  }
+  #about
+  {
+    line-height: 2em !important;
   }
 
   .back-image{
