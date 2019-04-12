@@ -86,6 +86,7 @@ h2 {
 	font-weight: bold !important;
 
 }
+
 #retireShow, #qualShow, #gratuity, #basicpension, .Bpay, #commVal{
 	color: red;
 	font-weight: bold !important;
@@ -101,4 +102,9 @@ h2 {
 
 #info-icon:hover{
 	color:#f4511e;
+}
+
+#enhancedPension,#normalPension,#from,#to,#normalTo{
+	color: red;
+	font-weight: bold !important;
 }
