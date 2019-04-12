@@ -5,37 +5,7 @@ var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
 var retireYear = document.getElementById('yearOfRetire');
 
-function retireRound(){
-  if (typeof dobDay.value!=NaN&&typeof dobMonth.value!=NaN&&typeof dobYear.value!=NaN) {
-    if (dobDay.value<3) {
-      retireYear.value=parseInt(dobYear.value) + agetoRetire;
-        if (dobYear.value%4==0&&dobYear.value%100!=0) {
-          calender_retire[1]=29;
-          }
-          if (dobMonth.value==1) {
-            retireMonth.value=12;
-            retireYear.value=parseInt(dobYear.value)-1 + agetoRetire;
-            retireDay.value=31;
-          }
-          else {
-            retireDay.value=calender_retire[dobMonth.value-2];
-            retireMonth.value=dobMonth.value-1;
-          }
-          console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
 
-    }
-    else {
-      if (dobYear.value%4==0&&dobYear.value%100!=0) {
-        calender_retire[1]=29;
-      }
-        retireMonth.value=dobMonth.value;
-        retireYear.value=parseInt(dobYear.value) + agetoRetire;
-        retireDay.value=calender_retire[dobMonth.value-1];
-        console.log(retireDay.value+"/"+retireMonth.value+"/"+retireYear.value);
-    }
-  }
-
-}
 //YEAR OF BIRTH INPUTS
 var dobDay = document.getElementById('dobDay');
 var dobMonth = document.getElementById('dobMonth');
@@ -46,21 +16,7 @@ var dayOfJoin = document.getElementById('dayOfJoin');
 var monthOfJoin = document.getElementById('monthOfJoin');
 var yearOfJoin = document.getElementById('yearOfJoin');
 
-// YEAR OF RETIREMENT CALCULATION
-dobDay.addEventListener("change",function(){
-  // retireDay.value = dobDay.value;
-  retireRound();
-});
 
-dobMonth.addEventListener("change",function(){
-//  retireMonth.value = dobMonth.value;
-  retireRound();
-});
-
-dobYear.addEventListener("change",function(){
-//  retireYear.value = parseInt(dobYear.value)+agetoRetire;
-  retireRound();
-});
 
 //DA %
 var daPercent = document.querySelector("#daPercent");
@@ -82,7 +38,6 @@ var daRS = document.getElementById('daRS');
 
 // DA Rupees INPUTS
 var great;
-var pes=parseFloat((great+npa)/2);
 
 daPercent.addEventListener("change",compare);
 lastMonth.addEventListener("change",compare);
@@ -100,7 +55,7 @@ else{
 }
 
     daRS.value = String(daRupees);
-// console.log(great);
+
 }
 
 
@@ -220,7 +175,7 @@ function calc_time_span() {
    document.querySelector("#serviceNotQualified").addEventListener("change",totalServiceQualified);
    timeOfService.addEventListener("change",totalServiceQualified);
    function totalServiceQualified(){
-     var day = 31-dayNotQual+actualDay;
+     var day = 31-dayNotQual+actualDay+1;
      var month = 12-monthNotQual+actualMonth-1;
      var year = actualYear-yearNotQual-1;
 
@@ -256,12 +211,8 @@ var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");
 
-
 document.getElementById('secondChange').addEventListener("change",function(){
 
-if (!(npa.value)) {
-  npa.value=0;
-}
 
 efg.value = parseFloat(daRS.value) + great + parseFloat(npa.value);
 efp.value = great + parseFloat(npa.value);
@@ -275,17 +226,16 @@ document.getElementById('submit').addEventListener("click",function(){
 
 
     document.getElementById('retireShow').innerHTML = " " + retireDay.value + "/" + retireMonth.value + "/" + retireYear.value;
-    // document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
+    document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
 
 //CALCULATION MODAL Gratuity
     var comm = document.querySelector("#comm");
-    var supcommfac = 8.194;
+    var supcommfac = 8.446;
     var sg;
     var rg;
     var halfYearCheck = parseInt(totalHalfYear.value);
     var gratuityShow = document.getElementById('gratuity');
     var basicpension = document.querySelector("#basicpension");
-    var Bpay = document.querySelectorAll('.Bpay');
 
     // comm.value=comm.value?comm.value:0;
 if (!(comm.value)) {
@@ -317,19 +267,17 @@ if (!(comm.value)) {
       if(rg >= 2000000){
         rg = 2000000;
       }
-console.log(parseInt(npa.value)+" "+great);
-Bpay[0].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
-Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
+
+
 //console.log(number.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
       gratuityShow.innerHTML =" " + (rg.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
     }
   basicpension.innerHTML = " "+ ((parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100)).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});;
   if (parseInt(comm.value)>0) {
-    document.querySelector("#commVal").innerHTML= ""+  (Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
-  document.querySelector("#commLabel").innerHTML="Commutation Value: ";}
+    document.querySelector("#commVal").innerHTML= "Commutation Value: "+  Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
+  }
   else {
     document.querySelector("#commVal").innerHTML="";
-    document.querySelector("#commLabel").innerHTML="";
   }
 });
 
