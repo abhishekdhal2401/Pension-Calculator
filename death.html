@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VRS</title>
+  <title>Superannuation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
 <body>
 
 <div class="container">
-  <h2>VOLUNTARY RETIREMENT</h2>
+  <h2>SUPERANNUATION</h2>
 
   <hr>
 
@@ -64,15 +64,15 @@
         <div class="form-group">
           <label class="control-label col-sm-3">3: Date Of Retirement :</label>
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31">
+            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31" disabled>
           </div>
 
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12">
+            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12" disabled>
           </div>
 
           <div class="col-sm-3">
-            <input type="number" class="form-control" id="yearOfRetire" placeholder="YEAR" min="1900" >
+            <input type="number" class="form-control" id="yearOfRetire" placeholder="YEAR" min="1900" disabled>
           </div>
         </div>
 
@@ -120,7 +120,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-5"> b) Service as apprentice except SAS apprentice: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="SAS - FULL FORM"></span></label>
+          <label class="control-label col-sm-5"> b) Service as apprentice except SAS apprentice: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="Subordiante Accounts Service"></span></label>
           <div class="col-sm-2">
             <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-23">
           </div>
@@ -325,25 +325,33 @@
         </div>
         <div class="modal-body bg-grey">
 
-          <div id="row" class="">
+          <div >
           <span>Date of Retirement:<span id="retireShow"></span></span>
           </div>
 
-          <div id="row" class="">
-            <span>Total Qualifying Service:<span id="qualShow"></span></span>
+          <div >
+          <span>Gratuity:<span id="gratuity"></span></span>
           </div>
 
-          <div id="row" class="">
-            <span>Amount of Gratuity:<span id="gratuity"></span></span>
+          <div >
+              <span id="commLabel">Commutation Value: </span><span id="commVal"></span>
           </div>
 
-          <div id="row" class="">
-            <span>Basic Pension: <span id="basicpension"></span> </span>
+          <div >
+            <span>Basic Pension: <span class="Bpay"></span> </span>
           </div>
 
-          <div  id="commVal">
-
+          <div >
+            <span>Effective Family Pension: <span class="Bpay"></span> </span>
           </div>
+
+          <div >
+            <span>Normal Family Pension: <span id="basicpension"></span> </span>
+          </div>
+
+         
+
+          
 
         </div>
         <div class="modal-footer">
@@ -366,7 +374,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <script src="function.js"></script>
-  <script src="vrscalc.js"></script>
+  <script src="supercalc.js"></script>
 
   </form>
 </div>

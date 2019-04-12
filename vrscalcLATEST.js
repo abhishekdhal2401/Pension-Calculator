@@ -1,4 +1,3 @@
-var agetoRetire = 60;
 
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
@@ -15,8 +14,6 @@ var dobYear = document.getElementById('dobYear');
 var dayOfJoin = document.getElementById('dayOfJoin');
 var monthOfJoin = document.getElementById('monthOfJoin');
 var yearOfJoin = document.getElementById('yearOfJoin');
-
-
 
 //DA %
 var daPercent = document.querySelector("#daPercent");
@@ -38,6 +35,7 @@ var daRS = document.getElementById('daRS');
 
 // DA Rupees INPUTS
 var great;
+var pes=parseFloat((great+npa)/2);
 
 daPercent.addEventListener("change",compare);
 lastMonth.addEventListener("change",compare);
@@ -55,7 +53,7 @@ else{
 }
 
     daRS.value = String(daRupees);
-
+// console.log(great);
 }
 
 
@@ -211,8 +209,12 @@ var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");
 
+
 document.getElementById('secondChange').addEventListener("change",function(){
 
+if (!(npa.value)) {
+  npa.value=0;
+}
 
 efg.value = parseFloat(daRS.value) + great + parseFloat(npa.value);
 efp.value = great + parseFloat(npa.value);
@@ -226,16 +228,30 @@ document.getElementById('submit').addEventListener("click",function(){
 
 
     document.getElementById('retireShow').innerHTML = " " + retireDay.value + "/" + retireMonth.value + "/" + retireYear.value;
-    document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
+    // document.getElementById('qualShow').innerHTML = " " + totalHalfYear.value + " Half Years";
 
 //CALCULATION MODAL Gratuity
     var comm = document.querySelector("#comm");
-    var supcommfac = 8.446;
+    var commArray=[9.090,9.075,9.059,9.040,9.019,8.996,8.971,8.943,8.913,8.881,8.846,8.808,8.768,8.724,8.678,8.627,8.572,8.512,8.446,8.371,8.287,8.194]
+    var age=retireYear.value-dobYear.value;
     var sg;
     var rg;
     var halfYearCheck = parseInt(totalHalfYear.value);
     var gratuityShow = document.getElementById('gratuity');
     var basicpension = document.querySelector("#basicpension");
+    var Bpay = document.querySelectorAll('.Bpay');
+
+ if(retireMonth.value<dobMonth.value){
+        age--;    
+    }
+    if(retireMonth.value == dobMonth.value){
+      if(retireDay.value<dobDay.value){
+        age--;   
+      }
+    }
+    var index=age-39
+    var commfac=commArray[index];
+
 
     // comm.value=comm.value?comm.value:0;
 if (!(comm.value)) {
@@ -267,18 +283,23 @@ if (!(comm.value)) {
       if(rg >= 2000000){
         rg = 2000000;
       }
-
-
+console.log(parseInt(npa.value)+" "+great);
+Bpay[0].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
+Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 //console.log(number.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
       gratuityShow.innerHTML =" " + (rg.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
     }
   basicpension.innerHTML = " "+ ((parseInt(lastMonth.value)/2 * (100-parseInt(comm.value))/100)).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});;
   if (parseInt(comm.value)>0) {
-    document.querySelector("#commVal").innerHTML= "Commutation Value: "+  Math.round(supcommfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
-  }
+    document.querySelector("#commVal").innerHTML= ""+  (Math.round(commfac  * 12 * parseInt(comm.value) /100 * parseInt(lastMonth.value)/2).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
+  document.querySelector("#commLabel").innerHTML="Commutation Value: ";}
   else {
     document.querySelector("#commVal").innerHTML="";
+    document.querySelector("#commLabel").innerHTML="";
   }
+  if (age<39) {
+    document.querySelector("#commVal").innerHTML="";
+    document.querySelector("#commLabel").innerHTML="";}
 });
 
 

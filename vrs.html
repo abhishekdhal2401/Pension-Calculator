@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VRS</title>
+  <title>VR</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -64,11 +64,11 @@
         <div class="form-group">
           <label class="control-label col-sm-3">3: Date Of Retirement :</label>
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31">
+            <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31" >
           </div>
 
           <div class="col-sm-2">
-            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12">
+            <input type="number" class="form-control" id="monthOfRetire" placeholder="MONTH" min="1" max="12" >
           </div>
 
           <div class="col-sm-3">
@@ -325,25 +325,33 @@
         </div>
         <div class="modal-body bg-grey">
 
-          <div id="row" class="">
+          <div >
           <span>Date of Retirement:<span id="retireShow"></span></span>
           </div>
 
-          <div id="row" class="">
-            <span>Total Qualifying Service:<span id="qualShow"></span></span>
+          <div >
+          <span>Gratuity:<span id="gratuity"></span></span>
           </div>
 
-          <div id="row" class="">
-            <span>Amount of Gratuity:<span id="gratuity"></span></span>
+          <div >
+              <span id="commLabel">Commutation Value: </span><span id="commVal"></span>
           </div>
 
-          <div id="row" class="">
-            <span>Basic Pension: <span id="basicpension"></span> </span>
+          <div >
+            <span>Basic Pension: <span class="Bpay"></span> </span>
           </div>
 
-          <div  id="commVal">
-
+          <div >
+            <span>Effective Family Pension: <span class="Bpay"></span> </span>
           </div>
+
+          <div >
+            <span>Normal Family Pension: <span id="basicpension"></span> </span>
+          </div>
+
+         
+
+          
 
         </div>
         <div class="modal-footer">
@@ -366,7 +374,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <script src="function.js"></script>
-  <script src="vrscalc.js"></script>
+  <script src="vrscalcLATEST.js"></script>
 
   </form>
 </div>
