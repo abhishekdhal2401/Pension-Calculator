@@ -1,6 +1,5 @@
 
   body, html {
-  
   height: 100%;
 }
 
@@ -18,9 +17,11 @@
   }
 
   body {
-    font: 400 16px Lato, sans-serif;
+
+    font: 400 15px Lato, sans-serif;
     line-height: 1.8;
-    color: #000;
+    color: #818181;
+
   }
   h2 {
     font-size: 24px;
@@ -28,20 +29,25 @@
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px;
+
+    text-align: center;
   }
   h4 {
-    font-size: 19px;
-    line-height: 1.375em;
+    font-size: 17px;
+    line-height: 2em;
     color: #303030;
     font-weight: 400;
-    margin-bottom: 30px;
-  } 
-
-  
+    margin-bottom: 10px;
+    letter-spacing: .5px;
+  }
+  #about1
+  {
+    line-height: 2em !important;
+  }
 
   .back-image{
     background-image: url("images/ee.jpg");
-    background-attachment: fixed; 
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -50,8 +56,7 @@
     top:0;
     bottom: 0;
     height:100vh;
-
-  } 
+}
 
   .jumbotron {
     top:0;
@@ -66,7 +71,23 @@
     font-family: Montserrat, sans-serif;
   }
   .container-fluid {
-    padding: 60px 80px;
+    padding: 60px 40px;
+  }
+
+  .imagepad img {
+    height: 360px;
+    width: 500px;
+    margin: auto;
+    margin-top: 60px !important;
+
+  }
+
+  .imagepad1 img{
+    height: 380px;
+    margin-top: 85px;
+  }
+  .bg-white{
+    background-color: white;
   }
 
   .bg-grey {
@@ -80,6 +101,25 @@
     color: #f4511e;
     font-size: 200px;
   }
+  .giticon{
+    font-size:30px;
+    color: #f4511e ;
+    transition: 0.5s;
+  }
+  .giticon:hover {
+    color: #fff;
+  }
+
+  .linicon{
+    font-size:30px;
+    color: #f4511e ;
+    transition: 0.5s;
+  }
+
+  .linicon:hover {
+    color: #0077b1;
+  }
+
   .thumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -112,7 +152,7 @@
     font-style: normal;
   }
   .panel {
-    border: 1px solid #f4511e; 
+    border: 1px solid #f4511e;
     border-radius:0 !important;
     transition: box-shadow 0.5s;
   }
@@ -121,13 +161,13 @@
   }
   .panel-footer .btn:hover {
     border: 1px solid #f4511e;
-    background-color: #9a9a9a !important;
+    background-color: #363636 !important;
     color: #fff;
     border-radius: 24px;
   }
   .panel-heading {
     color: #fff !important;
-    background-color: #9a9a9a !important;
+    background-color: #363636 !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 0px;
@@ -135,6 +175,7 @@
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     letter-spacing: 2px;
+    word-wrap: break-word;
   }
   .panel-footer {
     background-color: white !important;
@@ -154,21 +195,37 @@
     border-radius: 0px;
   }
 
-.parallax {
+  
+.paral{
   /* The image used */
-  background-image: url("images/foot.jpg");
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("images/foot.jpg");
 
   /* Full height */
-  height: 70%; 
+  height: 90%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+ 
   z-index: -5;
 
 }
+.parallel{
+  padding: 0px;
+
+
+}
+.person {
+  border: 10px solid transparent;
+  margin-bottom: 50px;
+  transition: 0.5s;
+  }
+
+  .person:hover {
+    border-color: #f1f1f1;
+  }
 
   .navbar {
     margin-bottom: 0;
@@ -190,7 +247,7 @@
   }
   .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
-    
+
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
     color: #f4511e !important;
@@ -206,17 +263,18 @@
     color: #f4511e;
   }
 
-.row a:hover{
+#r a:hover{
   color: #f4511e;
   text-decoration: none;
   background-color: #fff ;
 
 }
 
-
-  .row a
+  #r a
   {
     color: #fff ;
+    text-decoration: none;
+
     transition: 0.5s;
 
   }
@@ -232,7 +290,7 @@
     0% {
       opacity: 0;
       transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       transform: translateY(0%);
@@ -242,7 +300,7 @@
     0% {
       opacity: 0;
       -webkit-transform: translateY(70%);
-    } 
+    }
     100% {
       opacity: 1;
       -webkit-transform: translateY(0%);
@@ -268,11 +326,8 @@
     background-attachment: scroll;
   }
   }
-
-  /*links anchor tags*/
-  .bhavishyam_link {
-
-    text-decoration-color: #f4511e;
-
+  @media screen and (max-width: 600px){
+    .parallel{
+      height: 600px;
+    }
   }
-  
