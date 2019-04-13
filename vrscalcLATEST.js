@@ -1,3 +1,30 @@
+var preloader;
+  function loadNow(opacity){
+  if(opacity<=0){
+    displayContent();
+  }
+
+  else {
+    loader.style.opacity = opacity;
+    window.setTimeout(function() {
+      loadNow(opacity-0.05)
+    },100);
+  }
+}
+
+function displayContent(){
+  loader.style.display= 'none';
+  document.getElementById('content').style.display = 'inline';
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  loader = document.getElementById('loading');
+  loadNow(1.5);
+})
+
+
+
+
 
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
@@ -242,11 +269,11 @@ document.getElementById('submit').addEventListener("click",function(){
     var Bpay = document.querySelectorAll('.Bpay');
 
  if(retireMonth.value<dobMonth.value){
-        age--;    
+        age--;
     }
     if(retireMonth.value == dobMonth.value){
       if(retireDay.value<dobDay.value){
-        age--;   
+        age--;
       }
     }
     var index=age-39
