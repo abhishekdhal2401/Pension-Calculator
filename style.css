@@ -34,13 +34,13 @@
   }
   h4 {
     font-size: 17px;
-    line-height: 2em;
+    line-height: 1.5em;
     color: #303030;
     font-weight: 400;
     margin-bottom: 10px;
     letter-spacing: .5px;
   }
-  #about
+  #about1
   {
     line-height: 2em !important;
   }
@@ -82,8 +82,8 @@
   }
 
   .imagepad1 img{
-    height: 360px;
-    margin-top: 70px;
+    height: 380px;
+    margin-top: 80px;
   }
   .bg-white{
     background-color: white;
@@ -100,6 +100,25 @@
     color: #f4511e;
     font-size: 200px;
   }
+  .giticon{
+    font-size:30px;
+    color: #f4511e ;
+    transition: 0.5s;
+  }
+  .giticon:hover {
+    color: #fff;
+  }
+
+  .linicon{
+    font-size:30px;
+    color: #f4511e ;
+    transition: 0.5s;
+  }
+
+  .linicon:hover {
+    color: #0077b1;
+  }
+
   .thumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -175,21 +194,37 @@
     border-radius: 0px;
   }
 
-.parallax {
+  
+.paral{
   /* The image used */
-  background-image: url("images/foot.jpg");
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("images/foot.jpg");
 
   /* Full height */
-  height: 70%;
+  height: 90%;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+ 
   z-index: -5;
 
 }
+.parallel{
+  padding: 0px;
+
+
+}
+.person {
+  border: 10px solid transparent;
+  margin-bottom: 50px;
+  transition: 0.5s;
+  }
+
+  .person:hover {
+    border-color: #f1f1f1;
+  }
 
   .navbar {
     margin-bottom: 0;
@@ -227,14 +262,14 @@
     color: #f4511e;
   }
 
-.row a:hover{
+#r a:hover{
   color: #f4511e;
   text-decoration: none;
   background-color: #fff ;
 
 }
 
-  .row a
+  #r a
   {
     color: #fff ;
     text-decoration: none;
@@ -289,9 +324,4 @@
   .parallax {
     background-attachment: scroll;
   }
-  }
-
-
-  #out-jumbo{
-    background: #fff !important;
   }
