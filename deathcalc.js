@@ -162,10 +162,6 @@ function calc_time_span() {
   actualYear=year;
 
 
-
-
-  //console.log(actualDay+"/"actualMonth+"/"+actualYear+"  :actual Service");
-
 }
 
    timeOfService.addEventListener("change",calc_time_span);
@@ -189,7 +185,7 @@ function calc_time_span() {
      }
 
 
-     var hf=year*2;
+     hf=year*2;
      if(hf!=NaN){
        if (month >= 3&&month<9) {
          hf++;
@@ -199,13 +195,14 @@ function calc_time_span() {
        }
      }
 
-     document.querySelector("#qualYear").value=year;
-     document.querySelector("#qualMonth").value=month;
-     document.querySelector("#qualDay").value=day;
-     document.querySelector("#totalHalfYear").value=hf;
+     document.querySelector("#qualYear").value=year + " years";
+     document.querySelector("#qualMonth").value=month + " months";
+     document.querySelector("#qualDay").value=day + " days";
+     document.querySelector("#totalHalfYear").value=hf + " half years";
    }
 
 
+var hf;
 var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");
