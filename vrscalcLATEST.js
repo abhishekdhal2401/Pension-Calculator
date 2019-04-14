@@ -1,3 +1,4 @@
+
 var preloader;
   function loadNow(opacity){
   if(opacity<=0){
@@ -23,6 +24,9 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 
 
+var form;
+var submitCheck=document.querySelector("#vrsForm");
+var button = document.querySelector("#submit");
 
 
 
@@ -172,8 +176,6 @@ function calc_time_span() {
   var day = calender_join[moj-1] - doj + dor;
   var month= 12-moj+mor-1;
   var year =yor-yoj-1;
-  console.log(year);
-  console.log(month%12+"  "+day);
   if (day/31>0) {
     month = month+ parseInt(day/31);
     day=day%31;
@@ -186,12 +188,6 @@ function calc_time_span() {
   actualDay=day;
   actualMonth=month;
   actualYear=year;
-
-
-
-  console.log(actualDay+"/"+actualMonth+"/"+actualYear+"  : actual service");
-  //console.log(actualDay+"/"actualMonth+"/"+actualYear+"  :actual Service");
-
 }
 
    timeOfService.addEventListener("change",calc_time_span);
@@ -311,7 +307,6 @@ if (!(comm.value)) {
       if(rg >= 2000000){
         rg = 2000000;
       }
-console.log(parseInt(npa.value)+" "+great);
 Bpay[0].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 //console.log(number.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
@@ -330,6 +325,40 @@ Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN'
     document.querySelector("#commLabel").innerHTML="";}
 });
 
+//enabling and disabling of submit button according to validation of the form
+
+// document.forms['vrsForm'].addEventListener('invalid', function() {
+//   // Optional response here
+//   console.log("its invalid");
+// }, false);
+//
+// document.forms['vrsForm'].addEventListener('submit', function() {
+//   console.log(document.forms['vrsForm'].reportValidity());
+//   console.log("submit");
+// }, false);
+
+
+
+function jammer(){
+  form = document.querySelector("#vrsForm");
+  if (document.forms['vrsForm'].checkValidity()) {
+    document.querySelector("#submit").setAttribute("data-target","#myModal");
+        document.querySelector("#submit").setAttribute("type","button");
+  }
+  else {
+    document.querySelector("#submit").setAttribute("data-target",null);
+        document.querySelector("#submit").setAttribute("type","submit");
+  }
+}
+
+submitCheck.addEventListener("change",jammer);
+
+function reseting(){
+  console.log("reseting");
+  document.querySelector("#submit").setAttribute("data-target",null);
+      document.querySelector("#submit").setAttribute("type","submit");
+
+}
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
