@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="style1234.css">
 </head>
 <body>
-
+  <div id="loading"></div>
+  <div id="content">
+<div class="container-fluid bbc">
 <div class="container">
   <h2>SUPERANNUATION</h2>
 
@@ -31,7 +33,7 @@
 
       <div id="timeOfService">
         <div class="form-group">
-          <label class="control-label col-sm-3">1: Date Of Birth (dd / mm / yyy) :</label>
+          <label class="control-label col-sm-3">1: Date Of Birth :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dobDay" placeholder="DAY" min="1" max="31" >
           </div>
@@ -47,7 +49,7 @@
 
 
         <div class="form-group">
-          <label class="control-label col-sm-3">2: Date Of Joining (dd / mm / yyy) :</label>
+          <label class="control-label col-sm-3">2: Date Of Joining :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dayOfJoin" placeholder="DAY" min="1" max="31" >
           </div>
@@ -62,7 +64,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-3">3: Date Of Retirement (dd / mm / yyy) :</label>
+          <label class="control-label col-sm-3">3: Date Of Retirement :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31" disabled>
           </div>
@@ -307,15 +309,17 @@
 
 
       </button>
-       &nbsp;&nbsp;&nbsp; 
-          <form>
-             <input type="button" value="Back" class="btn btn-primary" onclick="history.back()">
-          </form>
+
+
+             <button type="button" class="btn btonc btn-primary" onclick="history.back()">Back</button>
     </div>
 
     <br>
     <br>
     <br>
+  </form>
+</div>
+</div>
 
 
 
@@ -367,11 +371,6 @@
   </div>
 </div>
 
-</form>
-
-</div>
-
-</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -380,8 +379,6 @@
     <script src="function.js"></script>
   <script src="supercalc.js"></script>
 
-  </form>
-</div>
 
 </body>
 </html>
