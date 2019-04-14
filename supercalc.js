@@ -1,3 +1,30 @@
+var preloader;
+  function loadNow(opacity){
+  if(opacity<=0){
+    displayContent();
+  }
+
+  else {
+    loader.style.opacity = opacity;
+    window.setTimeout(function() {
+      loadNow(opacity-0.05)
+    },100);
+  }
+}
+
+function displayContent(){
+  loader.style.display= 'none';
+  document.getElementById('content').style.display = 'inline';
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  loader = document.getElementById('loading');
+  loadNow(1.5);
+})
+
+
+
+
 var agetoRetire = 60;
 
 //YEAR OF RETIRE INPUT ELEMENTS
@@ -235,7 +262,7 @@ function calc_time_span() {
      }
 
 
-     var hf=year*2;
+     hf=year*2;
      if(hf!=NaN){
        if (month >= 3&&month<9) {
          hf++;
@@ -245,13 +272,13 @@ function calc_time_span() {
        }
      }
 
-     document.querySelector("#qualYear").value=year;
-     document.querySelector("#qualMonth").value=month;
-     document.querySelector("#qualDay").value=day;
-     document.querySelector("#totalHalfYear").value=hf;
+     document.querySelector("#qualYear").value=year + " years";
+     document.querySelector("#qualMonth").value=month + " month";
+     document.querySelector("#qualDay").value=day + " days";
+     document.querySelector("#totalHalfYear").value=hf + " half years";
    }
 
-
+var hf;
 var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");

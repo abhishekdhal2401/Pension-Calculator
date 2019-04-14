@@ -21,7 +21,9 @@
   <link rel="stylesheet" href="style1234.css">
 </head>
 <body>
-
+  <div id="loading"></div>
+  <div id="content">
+  <div class="container-fluid bbc">
 <div class="container">
   <h2>DEATH PENSION</h2>
 
@@ -31,7 +33,7 @@
 
       <div id="timeOfService">
         <div class="form-group">
-          <label class="control-label col-sm-3">1: Date Of Birth</label>
+          <label class="control-label col-sm-3">1: Date Of Birth (dd / mm / yyyy) :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dobDay" placeholder="DAY" min="1" max="31" >
           </div>
@@ -47,7 +49,7 @@
 
 
         <div class="form-group">
-          <label class="control-label col-sm-3">2: Date Of Joining :</label>
+          <label class="control-label col-sm-3">2: Date Of Joining (dd / mm / yyyy) :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dayOfJoin" placeholder="DAY" min="1" max="31" >
           </div>
@@ -62,7 +64,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-3">3: Date Of Demise :</label>
+          <label class="control-label col-sm-3">3: Date Of Demise (dd / mm / yyyy) :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" id="dayOfRetire" placeholder="DAY" min="1" max="31">
           </div>
@@ -181,7 +183,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-5"> f) Suspension followed by major penalty:</label>
+          <label class="control-label col-sm-5"> f) Suspension followed by major penalty :</label>
           <div class="col-sm-2">
             <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="four-63">
           </div>
@@ -202,21 +204,21 @@
     <div class="form-group">
       <label class="control-label col-sm-3 ll">5: Total QS counted for Pension/Gratuity: <span  id="info-icon" class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="right" title="QS - Qualifying Service"></span></label>
       <div class="col-sm-2">
-        <input type="number" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="qualDay" disabled>
+        <input type="text" class="form-control" name="numberday" placeholder="day" min="1" max="31" id="qualDay" disabled>
       </div>
 
       <div class="col-sm-2">
-        <input type="number" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="qualMonth" disabled>
+        <input type="text" class="form-control" name="numbermonth" min="0" max="12" placeholder="month" id="qualMonth" disabled>
       </div>
 
       <div class="col-sm-2 ux">
-        <input type="number" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="qualYear" disabled>
+        <input type="text" class="form-control" name="numberyear" placeholder="year" min="1" max="100" id="qualYear" disabled>
       </div>
       <div class="col-sm-1 uu">=</div>
 
 
       <div class="col-sm-2 uy">
-        <input type="number" class="form-control" name="halfyears" placeholder="Half Years" id="totalHalfYear" disabled>
+        <input type="text" class="form-control" name="halfyears" placeholder="Half Years" id="totalHalfYear" disabled>
       </div>
     </div>
 
@@ -228,28 +230,28 @@
   <div id="secondChange">
 
     <div class="form-group">
-      <label class="control-label col-sm-5">6: Sum of Basic Pay and NPA of last month: (Rs.):</label>
+      <label class="control-label col-sm-5">6: Sum of Basic Pay and NPA of last month : (Rs.):</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="numberbasic" placeholder="Rupees" id="lastMonth">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-5">7: Sum of Basic Pay and NPA of last 10 months: (Rs.):</label>
+      <label class="control-label col-sm-5">7: Sum of Basic Pay and NPA of last 10 months : (Rs.):</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="number10months" placeholder="Rupees" id="tenMonths">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-5">8: DA: (%):</label>
+      <label class="control-label col-sm-5">8: DA: (%) :</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="DA%" placeholder="Percent" id="daPercent">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-5">9: DA: (Rs.):</label>
+      <label class="control-label col-sm-5">9: DA: (Rs.) :</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="DA" placeholder="Rupees" id="daRS" disabled>
       </div>
@@ -259,7 +261,7 @@
     <br>
 
     <div class="form-group">
-      <label class="control-label col-sm-5">10: NPA: (Rs.):</label>
+      <label class="control-label col-sm-5">10: NPA: (Rs.) :</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="NPARs" placeholder="Rupees" id="npa">
       </div>
@@ -271,7 +273,7 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-5">11: Emolument for Gratuity (BP+DA+NPA) (Rs.):</label>
+      <label class="control-label col-sm-5">11: Emolument for Gratuity (BP+DA+NPA) (Rs.) :</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="emolumentGratuity" placeholder="Rupees" id="efg" disabled>
       </div>
@@ -279,7 +281,7 @@
 </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-5">12: Emolument for Pension (BP+NPA) (Rs.):</label>
+      <label class="control-label col-sm-5">12: Emolument for Pension (BP+NPA) (Rs.) :</label>
       <div class="col-sm-3">
         <input type="number" class="form-control" name="emolumentPension" placeholder="Rupees" id="efp" disabled>
       </div>
@@ -297,12 +299,17 @@
 
 
       </button>
+
+             <button type="button" class="btn btonc btn-primary" onclick="history.back()">Back</button>
+
     </div>
 
     <br>
     <br>
     <br>
-
+  </form>
+</div>
+</div>
 
 
   <!-- Modal -->
@@ -318,11 +325,11 @@
 
 
           <div >
-          <span>Gratuity: <span id="gratuity"></span></span>
+          <span>Death Gratuity: <span id="gratuity"></span></span>
           </div>
 
           <div >
-            <span>Basic Pension:-</span>
+            <span>Basic Pension:</span>
             <ol>
               <li>Enhanced Family Pension: <span id="enhancedPension"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;from(<span id="from"></span>) to (<span id="to"></span>)</li>
               <li>Normal Family Pension: <span id="normalPension"></span><br>&nbsp;&nbsp;&nbsp;&nbsp;from(<span id="normalTo"></span>)</li>
@@ -345,11 +352,6 @@
   </div>
 </div>
 
-</form>
-
-</div>
-
-</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -358,8 +360,7 @@
     <script src="function.js"></script>
   <script src="deathcalc.js"></script>
 
-  </form>
-</div>
+
 
 </body>
 </html>
