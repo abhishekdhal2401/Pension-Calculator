@@ -1,4 +1,35 @@
 
+var preloader;
+  function loadNow(opacity){
+  if(opacity<=0){
+    displayContent();
+  }
+
+  else {
+    loader.style.opacity = opacity;
+    window.setTimeout(function() {
+      loadNow(opacity-0.05)
+    },100);
+  }
+}
+
+function displayContent(){
+  loader.style.display= 'none';
+  document.getElementById('content').style.display = 'inline';
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  loader = document.getElementById('loading');
+  loadNow(1.5);
+})
+
+
+var form;
+var submitCheck=document.querySelector("#vrsForm");
+var button = document.querySelector("#submit");
+
+
+
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
@@ -145,8 +176,6 @@ function calc_time_span() {
   var day = calender_join[moj-1] - doj + dor;
   var month= 12-moj+mor-1;
   var year =yor-yoj-1;
-  console.log(year);
-  console.log(month%12+"  "+day);
   if (day/31>0) {
     month = month+ parseInt(day/31);
     day=day%31;
@@ -159,12 +188,6 @@ function calc_time_span() {
   actualDay=day;
   actualMonth=month;
   actualYear=year;
-
-
-
-  console.log(actualDay+"/"+actualMonth+"/"+actualYear+"  : actual service");
-  //console.log(actualDay+"/"actualMonth+"/"+actualYear+"  :actual Service");
-
 }
 
    timeOfService.addEventListener("change",calc_time_span);
@@ -188,7 +211,7 @@ function calc_time_span() {
      }
 
 
-     var hf=year*2;
+      hf=year*2;
      if(hf!=NaN){
        if (month >= 3&&month<9) {
          hf++;
@@ -198,13 +221,14 @@ function calc_time_span() {
        }
      }
 
-     document.querySelector("#qualYear").value=year;
-     document.querySelector("#qualMonth").value=month;
-     document.querySelector("#qualDay").value=day;
-     document.querySelector("#totalHalfYear").value=hf;
+     document.querySelector("#qualYear").value=year + " years";
+     document.querySelector("#qualMonth").value=month + " months";
+     document.querySelector("#qualDay").value=day + " days";
+     document.querySelector("#totalHalfYear").value=hf + " half years";
    }
 
 
+var hf;
 var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");
@@ -242,11 +266,11 @@ document.getElementById('submit').addEventListener("click",function(){
     var Bpay = document.querySelectorAll('.Bpay');
 
  if(retireMonth.value<dobMonth.value){
-        age--;    
+        age--;
     }
     if(retireMonth.value == dobMonth.value){
       if(retireDay.value<dobDay.value){
-        age--;   
+        age--;
       }
     }
     var index=age-39
@@ -283,7 +307,6 @@ if (!(comm.value)) {
       if(rg >= 2000000){
         rg = 2000000;
       }
-console.log(parseInt(npa.value)+" "+great);
 Bpay[0].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'});
 //console.log(number.toLocaleString('en-IN' ,{style: 'currency', currency: 'INR'}));
@@ -302,6 +325,40 @@ Bpay[1].innerHTML=" " + ((parseInt(npa.value)+great)*0.5).toLocaleString('en-IN'
     document.querySelector("#commLabel").innerHTML="";}
 });
 
+//enabling and disabling of submit button according to validation of the form
+
+// document.forms['vrsForm'].addEventListener('invalid', function() {
+//   // Optional response here
+//   console.log("its invalid");
+// }, false);
+//
+// document.forms['vrsForm'].addEventListener('submit', function() {
+//   console.log(document.forms['vrsForm'].reportValidity());
+//   console.log("submit");
+// }, false);
+
+
+
+function jammer(){
+  form = document.querySelector("#vrsForm");
+  if (document.forms['vrsForm'].checkValidity()) {
+    document.querySelector("#submit").setAttribute("data-target","#myModal");
+        document.querySelector("#submit").setAttribute("type","button");
+  }
+  else {
+    document.querySelector("#submit").setAttribute("data-target",null);
+        document.querySelector("#submit").setAttribute("type","submit");
+  }
+}
+
+submitCheck.addEventListener("change",jammer);
+
+function reseting(){
+  console.log("reseting");
+  document.querySelector("#submit").setAttribute("data-target",null);
+      document.querySelector("#submit").setAttribute("type","submit");
+
+}
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()

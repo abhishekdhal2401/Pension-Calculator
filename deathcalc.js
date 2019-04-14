@@ -1,4 +1,34 @@
+var preloader;
+  function loadNow(opacity){
+  if(opacity<=0){
+    displayContent();
+  }
+
+  else {
+    loader.style.opacity = opacity;
+    window.setTimeout(function() {
+      loadNow(opacity-0.05)
+    },100);
+  }
+}
+
+function displayContent(){
+  loader.style.display= 'none';
+  document.getElementById('content').style.display = 'inline';
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  loader = document.getElementById('loading');
+  loadNow(1.5);
+})
+
+
+
+
 var agetoRetire = 60;
+
+var form=document.querySelector("#deathForm");
+var button = document.querySelector("#submit");
 
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
@@ -162,10 +192,6 @@ function calc_time_span() {
   actualYear=year;
 
 
-
-
-  //console.log(actualDay+"/"actualMonth+"/"+actualYear+"  :actual Service");
-
 }
 
    timeOfService.addEventListener("change",calc_time_span);
@@ -189,7 +215,7 @@ function calc_time_span() {
      }
 
 
-     var hf=year*2;
+     hf=year*2;
      if(hf!=NaN){
        if (month >= 3&&month<9) {
          hf++;
@@ -199,13 +225,14 @@ function calc_time_span() {
        }
      }
 
-     document.querySelector("#qualYear").value=year;
-     document.querySelector("#qualMonth").value=month;
-     document.querySelector("#qualDay").value=day;
-     document.querySelector("#totalHalfYear").value=hf;
+     document.querySelector("#qualYear").value=year + " years";
+     document.querySelector("#qualMonth").value=month + " months";
+     document.querySelector("#qualDay").value=day + " days";
+     document.querySelector("#totalHalfYear").value=hf + " half years";
    }
 
 
+var hf;
 var npa=document.querySelector("#npa");
 var efg=document.querySelector("#efg");
 var efp=document.querySelector("#efp");
@@ -226,9 +253,7 @@ efp.value = great + parseFloat(npa.value);
 
 document.getElementById('submit').addEventListener("click",function(){
   efgValue = parseInt(efg.value);
-  console.log(efgValue);
   var halfYearCheck = parseInt(document.querySelector("#totalHalfYear").value);
-  console.log(halfYearCheck);
   var dGratuity;
   var gratuityFactor;
 
@@ -274,6 +299,29 @@ toEnhanced.innerHTML =retireDay.value + "/" + retireMonth.value + "/" + (parseIn
 normalTo.innerHTML = (parseInt(retireDay.value)+ 1) + "/" + retireMonth.value + "/" + (parseInt(retireYear.value)+7);
 
 });
+
+
+function jammer(){
+  form = document.querySelector("#deathForm");
+  if (document.forms['deathForm'].checkValidity()) {
+    document.querySelector("#submit").setAttribute("data-target","#myModal");
+        document.querySelector("#submit").setAttribute("type","button");
+  }
+  else {
+    document.querySelector("#submit").setAttribute("data-target",null);
+        document.querySelector("#submit").setAttribute("type","submit");
+  }
+}
+
+form.addEventListener("change",jammer);
+
+function reseting(){
+  console.log("reseting");
+  document.querySelector("#submit").setAttribute("data-target",null);
+      document.querySelector("#submit").setAttribute("type","submit");
+
+}
+
 
 
 $(function () {

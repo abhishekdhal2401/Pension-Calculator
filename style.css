@@ -34,7 +34,7 @@
   }
   h4 {
     font-size: 17px;
-    line-height: 1.5em;
+    line-height: 2em;
     color: #303030;
     font-weight: 400;
     margin-bottom: 10px;
@@ -75,15 +75,16 @@
   }
 
   .imagepad img {
-    height: 350px;
+    height: 360px;
     width: 500px;
     margin: auto;
+    margin-top: 60px !important;
 
   }
 
   .imagepad1 img{
     height: 380px;
-    margin-top: 80px;
+    margin-top: 85px;
   }
   .bg-white{
     background-color: white;
@@ -324,4 +325,9 @@
   .parallax {
     background-attachment: scroll;
   }
+  }
+  @media screen and (max-width: 600px){
+    .parallel{
+      height: 600px;
+    }
   }
