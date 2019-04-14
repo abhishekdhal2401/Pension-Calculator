@@ -10,22 +10,38 @@ var config = {
 firebase.initializeApp(config);
 var firestore=firebase.firestore();
 
-var send = document.querySelector("#fireStore");
-var name = document.querySelector("#name");
-
-send.addEventListener("click",function(){
+function send(){
   var email = document.querySelector("#email").value;
   var username = document.querySelector("#name").value;
   var comments = document.querySelector("#comments").value;
   var docRef = firestore.collection("users").doc(email);
 
   docRef.set({
-    Username: username,
-    Message: comments,
-    Email: email
+    name: username,
+    message: comments,
+    email: email
   }).then(function(){
       console.log("successful");
   }).catch(function(error){
       console.log(error);
   });
-});
+}
+
+
+var form=document.querySelector("#fireForm");
+
+function jammer(){
+  form = document.querySelector("#fireForm");
+  if (document.forms['fireForm'].checkValidity()) {
+        document.querySelector("#fireStore").setAttribute("type","button");
+                send();
+                  document.querySelector("#showSuccess").innerHTML="success";
+                form.reset();
+  }
+  else {
+    document.querySelector("#showSuccess").innerHTML="";
+        document.querySelector("#fireStore").setAttribute("type","submit");
+  }
+}
+
+form.addEventListener("change",jammer);

@@ -138,7 +138,7 @@
           <h1>VRS</h1>
         </div>
         <div class="panel-body">
-          <p><strong>Voluntary Retirtement Scheme</strong></p>
+          <p><strong>Voluntary Retirement Scheme</strong></p>
 
           <p>Any Government servant can apply for voluntary retirement, three months in advance, only after the completion of twenty years of his qualifying service, provided there is no vigilance or Departmental Enquiry pending/initiated against him/her.</p>
 
@@ -239,27 +239,29 @@
       <p><span class="glyphicon glyphicon-envelope"></span> harisumaid27@gmail.com</p>
       <p><span class="glyphicon glyphicon-envelope"></span> adityeshmishra98@gmail.com</p>
     </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+    <form class="" id="fireForm">
+      <div class="col-sm-7 slideanim">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
         </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+
+        <textarea style="resize: none;" class="form-control" id="comments" name="comments" placeholder="Comment" rows="6" required></textarea><br>
+
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <button class="btn btn-default pull-right" id="fireStore" type="submit">Send <span class="badge" id="showSuccess"></span> </button>
+          </div>
         </div>
+
+        <br>
+
       </div>
-
-      <textarea style="resize: none;" class="form-control" id="comments" name="comments" placeholder="Comment" rows="6"></textarea><br>
-
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" id="fireStore" type="submit">Send</button>
-        </div>
-      </div>
-
-      <br>
-
-    </div>
+    </form>
   </div>
   </div>
 </div>
