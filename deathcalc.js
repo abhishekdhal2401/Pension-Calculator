@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded",function(){
 
 var agetoRetire = 60;
 
+var form=document.querySelector("#deathForm");
+var button = document.querySelector("#submit");
+
 //YEAR OF RETIRE INPUT ELEMENTS
 var retireDay = document.getElementById('dayOfRetire');
 var retireMonth = document.getElementById('monthOfRetire');
@@ -250,9 +253,7 @@ efp.value = great + parseFloat(npa.value);
 
 document.getElementById('submit').addEventListener("click",function(){
   efgValue = parseInt(efg.value);
-  console.log(efgValue);
   var halfYearCheck = parseInt(document.querySelector("#totalHalfYear").value);
-  console.log(halfYearCheck);
   var dGratuity;
   var gratuityFactor;
 
@@ -298,6 +299,29 @@ toEnhanced.innerHTML =retireDay.value + "/" + retireMonth.value + "/" + (parseIn
 normalTo.innerHTML = (parseInt(retireDay.value)+ 1) + "/" + retireMonth.value + "/" + (parseInt(retireYear.value)+7);
 
 });
+
+
+function jammer(){
+  form = document.querySelector("#deathForm");
+  if (document.forms['deathForm'].checkValidity()) {
+    document.querySelector("#submit").setAttribute("data-target","#myModal");
+        document.querySelector("#submit").setAttribute("type","button");
+  }
+  else {
+    document.querySelector("#submit").setAttribute("data-target",null);
+        document.querySelector("#submit").setAttribute("type","submit");
+  }
+}
+
+form.addEventListener("change",jammer);
+
+function reseting(){
+  console.log("reseting");
+  document.querySelector("#submit").setAttribute("data-target",null);
+      document.querySelector("#submit").setAttribute("type","submit");
+
+}
+
 
 
 $(function () {
